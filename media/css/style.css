@@ -1,0 +1,52 @@
+body{
+	font: 14px/1.6 "Microsoft Yahei","Tahoma","SimSun";
+}
+
+.light_blue{
+	background-color:#E6F4FF;
+	border-bottom: 2px solid #dbe7f3;
+}
+.head_item{
+	width:80%;
+	margin: 0 auto;
+}
+.pad{
+	padding:20px 0;
+}
+.navigation_item > div{
+	text-align:center;
+	border-left:solid 1px black;
+	cursor: pointer;
+}
+.navigation_item div:first-child{
+	border: none;
+}
+.main_body{
+	width:70%;
+	margin:0 auto;
+	background: #FFFFFF;
+}
+.up_border{
+	margin: 40px 0 0 0;
+	border-top: 3px solid #076ea8;
+}
+.up_border img{
+	margin-top: 2px;
+	width:100%;
+
+}
+.main_body .row .up_border h3{
+	font: 800 28px/1.4 黑体;
+	color: #0E0E0E;
+	margin-left: 5%;
+}
+.main_body .row .up_border div{
+	margin: 14px;
+	padding-top: 15px;
+	border-top: 1px #0E0E0E solid;
+}
+.main_body .row .up_border div h4{
+	font: 800 20px/1.4 黑体;
+	color: #0E0E0E;
+	padding-left: 25%;
+}
