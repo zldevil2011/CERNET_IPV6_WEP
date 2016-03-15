@@ -9,6 +9,9 @@ body{
 	-moz-opacity:0.9; /*Firefox私有*/
 	opacity:0.9;
 }
+.border_1px{
+	border: 1px solid #D4D4D4;
+}
 .light_blue{
 	background-color:#E6F4FF;
 	border-bottom: 2px solid #dbe7f3;
@@ -98,15 +101,15 @@ body{
 	display: inline-block;
     background: 0;
 }
-.week_weather li .weather_icon{
+.weather_icon{
 	background-image: url(/web_media/images/weather.png);
     height: 30px;
     width: 30px;
 }
-.week_weather li .d00{
+.d00{
 	background-position: 0 0;
 }
-.week_weather li .n00{
+.n00{
 	background-position: 0 -320px;
 }
 .week_weather li .win i{
@@ -115,4 +118,32 @@ body{
     font-size: 12px;
     margin-top: 6px;
     display: block;
+}
+big{
+	margin: 0 auto;
+    margin-top: 4px;
+    display: block;
+}
+.h80{
+	height:80px;
+}
+.w80{
+	width:80px;
+}
+#today h1{
+    font-size: 13px;
+    margin-top: 14px;
+    line-height: 18px;
+	text-align: center;
+}
+#today p span{
+	color: #7f7f7f;
+    margin-top: 10px;
+    line-height: 30px;
+    margin-top: 11px;
+	font-size:36px;
+}
+#today p em{
+	font-size:24px;
+	font-style: normal;
 }
