@@ -173,3 +173,7 @@ big{
 .real_info .column{
 	margin-top: 5px;
 }
+.info_tip{
+	font: 800 20px/1.4 黑体;
+    color: #0E0E0E;
+}
