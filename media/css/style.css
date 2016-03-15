@@ -63,6 +63,7 @@ body{
 }
 .week_weather{
 	list-style:none;
+	min-height:400px;
 }
 .week_weather li{
 	position: relative;
