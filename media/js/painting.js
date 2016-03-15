@@ -201,4 +201,239 @@ $(function () {
 		    }, 3000);
 		}
 	});
-});					
+});	
+$(function () {
+    $('#real_info_tem').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0]
+        },
+        yAxis: {
+            title: {
+                text: 'Temperature (°C)'
+            }
+        },
+        tooltip: {
+            enabled: false,
+            formatter: function() {
+                return '<b>'+ this.series.name +'</b><br/>'+this.x +': '+ this.y +'°C';
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: '整点温度',
+            data: [3.9, 4.2, 5.7, 3.5, 11.9, 13.2, 10.0, 14.6, 12.2, 10.3, 6.6, 4.8,3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8,3.5]
+        }]
+    });
+});							
+$(function () {
+    $('#real_info_humidity').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0]
+        },
+        yAxis: {
+            title: {
+                text: 'Temperature (°C)'
+            }
+        },
+        tooltip: {
+            enabled: false,
+            formatter: function() {
+                return '<b>'+ this.series.name +'</b><br/>'+this.x +': '+ this.y +'°C';
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: '湿度',
+            data: [2.9, 4.2, 5.7, 3.5, 9.9, 13.2, 9.0, 13.6, 2.2, 8.3, 6.6, 4.8,3.9, 4.2, 5.7, 8.5, 11.9, 5.2, 7.0, 6.6, 14.2, 10.3, 6.6, 4.8,3.5]
+        }]
+    });
+});							
+$(function () {
+    $('#real_info_precipitation').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0]
+        },
+        yAxis: {
+            title: {
+                text: 'Temperature (°C)'
+            }
+        },
+        tooltip: {
+            enabled: false,
+            formatter: function() {
+                return '<b>'+ this.series.name +'</b><br/>'+this.x +': '+ this.y +'°C';
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: '整点降水量',
+            data: [3.9, 4.2, 5.9, 3.5, 1.9, 8.2, 10.0, 14.6, 12.2, 3.3, 6.6, 4.8,3.9, 4.2, 5.7, 8.5, 13.9, 13.2, 13.0, 13.6, 14.2, 10.3, 6.6, 4.8,3.5]
+        }]
+    });
+});
+$(function () {
+    $('#real_info_air_quality').highcharts({
+        chart: {
+            type: 'column',
+            margin: [ 50, 50, 100, 80]
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+               0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0
+            ],
+            labels: {
+                rotation: -45,
+                align: 'right',
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'PM2.5'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Population in 2008: <b>{point.y:.1f} millions</b>',
+        },
+        series: [{
+            name: 'Population',
+            data: [34.4, 21.8, 20.1, 20, 19.6, 19.5, 19.1, 18.4, 18,
+                17.3, 16.8, 15, 14.7, 14.5, 13.3, 12.8, 12.4, 11.8,
+                11.7, 11.2,34.4, 21.8, 20.1, 20, 19.6],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                x: 4,
+                y: 10,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif',
+                    textShadow: '0 0 3px black'
+                }
+            }
+        }]
+    });
+});
+$(function () {
+    $('#real_info_cloud').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: ''
+        },
+        tooltip: {
+    	    pointFormat: '{series.name}'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    color: '#000000',
+                    connectorColor: '#000000',
+                    format: '<b>{point.name}</b>'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Browser share',
+            data: [
+                ['东风',   0.042],
+                ['西北风',   0.042],
+                ['东风',   0.042],
+                ['西南风',   0.042],
+                ['东风',   0.042],
+                ['西风',   0.042],
+                ['北风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                ['东风',   0.042],
+                
+            ]
+        }]
+    });
+});															
+$(function(){
+	var height = $("#real_windy_speed").height();
+	console.log(height);
+	$("#real_windy_speed").parent().height(height);
+});	

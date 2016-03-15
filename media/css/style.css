@@ -136,6 +136,9 @@ big{
     line-height: 18px;
 	text-align: center;
 }
+#today p{
+	margin-top:25px;
+}
 #today p span{
 	color: #7f7f7f;
     margin-top: 10px;
@@ -146,4 +149,26 @@ big{
 #today p em{
 	font-size:24px;
 	font-style: normal;
+}
+.h100{
+	height:100%;
+}
+#today .col-md-2 .wea_info{
+	height: 60px;
+    line-height: 18px;
+    margin: 0 auto;
+	margin-top: 20px;
+    overflow: hidden;
+    padding-top: 0;
+    width: 100%;
+}
+.real_info{
+	margin-top:5px;
+	border-top: 3px solid #0A6CAD;
+}
+.real_info ul li a{
+	padding: 4px 5px;
+}
+.real_info .column{
+	margin-top: 5px;
 }
