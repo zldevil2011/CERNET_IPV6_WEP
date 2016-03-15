@@ -69,13 +69,29 @@
 						<div class="tab-content">
    							<div role="tabpanel" class="tab-pane active" id="today">
 								<div class = "row clearfix">
-									<div class = "col-md-8">
+									<div class = "col-md-7" id = "real_windy_speed">
 										<div id = "real_wind" class = "w100"></div>
 										<div style = "float:left;padding-left:25%;font: 14px/1.6 'Microsoft Yahei','Tahoma','SimSun';color: #252525;">相对湿度:143</div>
 										<div style = "float:right;padding-right:25%;font: 14px/1.6 'Microsoft Yahei','Tahoma','SimSun';color: #252525";>污染值:200</div>	
 									</div>
-									<div class = "col-md-2"></div>
-									<div class = "col-md-2"></div>
+									<div class = "col-md-2 border_1px h100">
+										<h1>白天</h1>
+										<big class = "weather_icon d00"></big>
+										<p class = "wea_info">多云转晴，平原地区有轻微霾</p>
+										<p>
+											<span>15</span>
+											<em>°C</em>
+										</p>
+									</div>
+									<div class = "col-md-2 col-md-offset-1 border_1px h100">
+										<h1>晚上</h1>
+										<big class = "weather_icon n00"></big>
+										<p class = "wea_info">多云转晴，平原地区有轻微霾</p>
+										<p>
+											<span>15</span>
+											<em>°C</em>
+										</p>
+									</div>
 								</div>	
 							</div>
     						<div role="tabpanel" class="tab-pane w100" id="week">
@@ -187,6 +203,47 @@
 								<div id="year_container" style="min-width:700px;height:400px"></div>
 							</div>
   						</div>
+					</section>
+					<section class = "real_info">
+						<div class="col-md-12 column">
+							<ul class="nav nav-pills" role = "tablist">
+								<li class="disabled info_tip">
+									整点气象信息
+								</li>
+								<li role = "presentation" class="pull-right">
+									 <a href="#tem" aria-controls="tem" role="tab" data-toggle="tab" >温度</a>
+								</li>
+								<li role = "presentation" class="pull-right">
+									 <a href="#humidity" aria-controls="humidity" role="tab" data-toggle="tab" >湿度</a>
+								</li>
+								<li role = "presentation" class="pull-right">
+									 <a href="#precipitation" aria-controls="precipitation" role="tab" data-toggle="tab" >降水量</a>
+								</li>
+								<li role = "presentation" class="pull-right">
+									 <a href="#cloud" aria-controls="cloud" role="tab" data-toggle="tab" >风力风向</a>
+								</li>
+								<li role = "presentation" class="active pull-right">
+									 <a href="#air_quality" aria-controls="air_quality" role="tab" data-toggle="tab" >空气质量</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+   								<div role="tabpanel" class="tab-pane w100" id="tem">
+									<div id = "real_info_tem" style = "min-width:700px;height:400px"></div>
+								</div>
+   								<div role="tabpanel" class="tab-pane w100" id="humidity">
+									<div id = "real_info_humidity" style = "min-width:700px;height:400px;"></div>
+								</div>
+   								<div role="tabpanel" class="tab-pane w100" id="precipitation">
+									<div id = "real_info_precipitation" style = "min-width:700px;height:400px;"></div>
+								</div>
+   								<div role="tabpanel" class="tab-pane w100" id="cloud">
+									<div id = "real_info_cloud" style = "min-width:700px;height:400px;"></div>
+								</div>
+   								<div role="tabpanel" class="tab-pane active w100" id="air_quality">
+									<div id = "real_info_air_quality" style = "min-width:700px;height:400px;"></div>
+								</div>
+							</div>
+						</div>
 					</section>
 				</div>
 				<div class = "col-md-4 up_border">

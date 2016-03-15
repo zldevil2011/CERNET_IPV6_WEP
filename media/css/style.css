@@ -9,6 +9,9 @@ body{
 	-moz-opacity:0.9; /*Firefox私有*/
 	opacity:0.9;
 }
+.border_1px{
+	border: 1px solid #D4D4D4;
+}
 .light_blue{
 	background-color:#E6F4FF;
 	border-bottom: 2px solid #dbe7f3;
@@ -60,6 +63,7 @@ body{
 }
 .week_weather{
 	list-style:none;
+	min-height:400px;
 }
 .week_weather li{
 	position: relative;
@@ -98,15 +102,15 @@ body{
 	display: inline-block;
     background: 0;
 }
-.week_weather li .weather_icon{
+.weather_icon{
 	background-image: url(/web_media/images/weather.png);
     height: 30px;
     width: 30px;
 }
-.week_weather li .d00{
+.d00{
 	background-position: 0 0;
 }
-.week_weather li .n00{
+.n00{
 	background-position: 0 -320px;
 }
 .week_weather li .win i{
@@ -115,4 +119,61 @@ body{
     font-size: 12px;
     margin-top: 6px;
     display: block;
+}
+big{
+	margin: 0 auto;
+    margin-top: 4px;
+    display: block;
+}
+.h80{
+	height:80px;
+}
+.w80{
+	width:80px;
+}
+#today h1{
+    font-size: 13px;
+    margin-top: 14px;
+    line-height: 18px;
+	text-align: center;
+}
+#today p{
+	margin-top:25px;
+}
+#today p span{
+	color: #7f7f7f;
+    margin-top: 10px;
+    line-height: 30px;
+    margin-top: 11px;
+	font-size:36px;
+}
+#today p em{
+	font-size:24px;
+	font-style: normal;
+}
+.h100{
+	height:100%;
+}
+#today .col-md-2 .wea_info{
+	height: 60px;
+    line-height: 18px;
+    margin: 0 auto;
+	margin-top: 20px;
+    overflow: hidden;
+    padding-top: 0;
+    width: 100%;
+}
+.real_info{
+	margin-top:5px;
+	border-top: 3px solid #0A6CAD;
+}
+.real_info ul li a{
+	padding: 4px 5px;
+}
+.real_info .column{
+	margin-top: 5px;
+}
+.info_tip{
+	font: 800 20px/1.4 黑体;
+    color: #0E0E0E;
 }
