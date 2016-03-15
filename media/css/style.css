@@ -1,0 +1,118 @@
+body{
+	font: 14px/1.6 "Microsoft Yahei","Tahoma","SimSun";
+}
+.w100{
+	width:100%;
+}
+.container_opacity{
+	filter:alpha(opacity=90); /*IE滤镜*/
+	-moz-opacity:0.9; /*Firefox私有*/
+	opacity:0.9;
+}
+.light_blue{
+	background-color:#E6F4FF;
+	border-bottom: 2px solid #dbe7f3;
+}
+.head_item{
+	width:80%;
+	margin: 0 auto;
+}
+.pad{
+	padding:20px 0;
+}
+.navigation_item > div{
+	text-align:center;
+	border-left:solid 1px black;
+	cursor: pointer;
+}
+.navigation_item div:first-child{
+	border: none;
+}
+.main_body{
+	width:70%;
+	margin:0 auto;
+	background:#FFFFFF;
+	/*background: #408AA7;*/
+}
+.up_border{
+	margin: 40px 0 0 0;
+	border-top: 3px solid #076ea8;
+}
+.up_border img{
+	margin-top: 2px;
+	width:100%;
+
+}
+.main_body .row .up_border h3{
+	font: 800 28px/1.4 黑体;
+	color: #0E0E0E;
+	margin-left: 5%;
+}
+.main_body .row .up_border div{
+	margin: 14px;
+	padding-top: 15px;
+	border-top: 1px #0E0E0E solid;
+}
+.main_body .row .up_border div h4{
+	font: 800 20px/1.4 黑体;
+	color: #0E0E0E;
+	padding-left: 25%;
+}
+.week_weather{
+	list-style:none;
+}
+.week_weather li{
+	position: relative;
+    height: 242px;
+    float: left;
+    background: #f2f9ff;
+    border: 2px solid #f6fbff;
+    width: 89px;
+    text-align: center;
+    margin-right: 2px;
+    cursor: pointer;
+    padding-bottom: 6px;
+}
+.week_weather li h1{
+	height: 34px;
+    line-height: 34px;
+    font-size: 13px;
+}
+.week_weather li big{
+	margin: 0 auto;
+	margin-top: 4px;
+    display: block;
+}
+.week_weather li .tem{
+	font: 14px/1.6 "Microsoft Yahei","Tahoma","SimSun";
+	height:30px;
+	line-height:30px;
+	margin-top:5px;
+}
+.week_weather li .tem span{
+	color: #f56a13;
+    display: inline-block;
+}
+.week_weather li .tem i{
+	font: 14px/1.6 "Microsoft Yahei","Tahoma","SimSun";
+	display: inline-block;
+    background: 0;
+}
+.week_weather li .weather_icon{
+	background-image: url(/web_media/images/weather.png);
+    height: 30px;
+    width: 30px;
+}
+.week_weather li .d00{
+	background-position: 0 0;
+}
+.week_weather li .n00{
+	background-position: 0 -320px;
+}
+.week_weather li .win i{
+	font: 14px/1.6 "Microsoft Yahei","Tahoma","SimSun";
+	background: 0;
+    font-size: 12px;
+    margin-top: 6px;
+    display: block;
+}

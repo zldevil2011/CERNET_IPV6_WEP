@@ -19,5 +19,5 @@ import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 	url(r'',include('app.urls')),
-	url(r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_PATH})
+	url(r'^web_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_PATH})
 ]
