@@ -10,7 +10,7 @@ class User(models.Model):
 	password = models.CharField(max_length = 100)
 
 	def __unicode__(self):
-		return self.user_id
+		return str(self.username)
 
 
 #管理员信息
@@ -21,5 +21,5 @@ class Admin(models.Model):
 	priority = models.IntegerField()
 
 	def __unicode__(self):
-		return self.username	
+		return str(self.username)
 # Create your models here.

@@ -7,7 +7,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-.swp
+*.swp
 env/
 build/
 develop-eggs/

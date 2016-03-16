@@ -13,11 +13,11 @@ body{
 	border: 1px solid #D4D4D4;
 }
 .light_blue{
-	background-color:#E6F4FF;
-	border-bottom: 2px solid #dbe7f3;
+	background-color:#F5FAFE;
+	border-bottom: 4px solid #8D9E93;
 }
 .head_item{
-	width:80%;
+	width:70%;
 	margin: 0 auto;
 }
 .pad{
@@ -176,4 +176,47 @@ big{
 .info_tip{
 	font: 800 20px/1.4 黑体;
     color: #0E0E0E;
+}
+.real_info .tab-content .factor_explanation{
+	text-align:center;
+}
+footer{
+	/*margin-top: 10px;*/
+    background-color: rgba(0,0,0,0.75);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0,startColorstr = '#aa000000', endColorstr = '#aa000000' )\9;
+}
+footer .footer_up h2{
+	padding-top: 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(6, 136, 148);
+    font-family: 'Microsoft YaHei', ΢���ź�, SimSun, ����;
+    font-weight: bold;
+}
+footer .footer_up p{
+	padding-bottom: 20px;
+    height: 26px;
+    line-height: 26px;
+    border-bottom: 1px dotted #999;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+footer .footer_down{
+	padding: 10px auto;
+}
+footer .footer_down p{
+	line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+	margin:0;
+}
+.table>tbody>tr>td{
+	vertical-align: middle;
+}
+.table>tbody>tr>td:first-child{
+	text-align:center;
 }

@@ -436,4 +436,4 @@ $(function(){
 	var height = $("#real_windy_speed").height();
 	console.log(height);
 	$("#real_windy_speed").parent().height(height);
-});	
+});
