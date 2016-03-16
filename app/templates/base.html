@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css"  href = "/web_media/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href = "/web_media/css/style.css">
 </head>
-<body style = "background-image:url(/web_media/images/blue_sky.png);background-size:cover;">
+<body>
 	<div class = "container container_opacity" style = "width:100%;padding-left:0;padding-right:0;">
 		<header class = "light_blue">
 			<div class="row clearfix head_item">
@@ -48,7 +48,8 @@
 		</header>
 		{% block main_body %}
 		{% endblock %}
-		<footer>
+	</div>
+		<div class = "footer">
 			<section class = "footer_up">
 				<h2>友情链接</h2>
 				<p>
@@ -70,8 +71,7 @@
 				<p>Copyright © 2016-2016 BNU, All Rights Reserved</p>
 				<p>北京师范大学 版权所有</p>
 			</section>
-		</footer>
-	</div>
+		</div>
 	<script type = "text/javascript" src = "/web_media/js/jquery-2.2.1.min.js"></script>
 	<script type = "text/javascript" src = "/web_media/js/bootstrap.min.js"></script>
 	<script type = "text/javascript" src = "/web_media/js/highcharts.js"></script>
