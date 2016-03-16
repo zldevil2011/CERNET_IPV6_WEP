@@ -13,11 +13,11 @@ body{
 	border: 1px solid #D4D4D4;
 }
 .light_blue{
-	background-color:#E6F4FF;
-	border-bottom: 2px solid #dbe7f3;
+	background-color:#F5FAFE;
+	border-bottom: 4px solid #8D9E93;
 }
 .head_item{
-	width:80%;
+	width:70%;
 	margin: 0 auto;
 }
 .pad{
@@ -214,5 +214,9 @@ footer .footer_down p{
     color: #999;
 	margin:0;
 }
-
-
+.table>tbody>tr>td{
+	vertical-align: middle;
+}
+.table>tbody>tr>td:first-child{
+	text-align:center;
+}

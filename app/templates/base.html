@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF8">
+    <title>{% block title %}{% endblock %}</title>
+	<meta name = "viewport" content = "width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" type="text/css"  href = "/web_media/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href = "/web_media/css/style.css">
+</head>
+<body style = "background-image:url(/web_media/images/blue_sky.png);background-size:cover;">
+	<div class = "container container_opacity" style = "width:100%;padding-left:0;padding-right:0;">
+		<header class = "light_blue">
+			<div class="row clearfix head_item">
+				<div class = "col-md-6 column">
+					今天是2016年3月14日 星期一 农历二月初六
+				</div>
+				<div class = "col-md-2 column col-md-offset-1">
+					手机客户端
+				</div>
+				<div class = "col-md-2 column col-md-offset-1">
+					联系我们
+				</div>
+			</div>
+			<div class = "row clearfix head_item head pad">
+				<div class = "col-md-4" style = "height:34px;line-height:34px">
+					<img class = "img_rounded"  src = "/web_media/images/Chine_weather.png">
+				</div>
+				<div class = "col-md-4">
+					<div class = "input-group">
+						<input type = “text” class = "form-control">
+						<span class = "input-group-addon" >Search</span>
+					</div>
+				</div>
+				<div class = "col-md-4" style = "height:34px;line-height:34px;text-align:right;">
+					15C/3C 多云
+				</div>
+			</div>
+			<div class = "row clearfix head_item head pad navigation_item">
+				<div class = "col-md-2">首页</div>
+				<div class = "col-md-2">数据</div>
+				<div class = "col-md-2">产品</div>
+				<div class = "col-md-2">资料</div>
+				<div class = "col-md-2">软件</div>
+				<div class = "col-md-2">服务</div>
+			</div>
+		</header>
+		{% block main_body %}
+		{% endblock %}
+		<footer>
+			<section class = "footer_up">
+				<h2>友情链接</h2>
+				<p>
+					<a href="http://www.nmc.gov.cn/" target="_blank" rel="nofollow">中央气象台</a>
+    	             |<a href="http://www.weather.com/" target="_blank" rel="nofollow">美国气象频道</a>
+    	             |<a href="http://www.weather.com.cn/" target="_blank" rel="nofollow">中国天气网</a>
+    	             |<a href="http://www.pm25.com/" target="_blank" rel="nofollow">绿色呼吸</a>
+    	             |<a href="http://www.feeyo.com/" target="_blank" rel="nofollow">飞友网</a>
+    	             |<a href="http://i.firefoxchina.cn/?www.firefoxchina.cn" target="_blank" rel="nofollow">火狐浏览器</a>
+    	             |<a href="http://tianqitong.sina.cn/" target="_blank" rel="nofollow">天气通</a>
+    	             |<a href="http://weather.mipang.com" target="_blank" rel="nofollow">米胖天气</a>
+    	             |<a href="http://www.xn121.com/" target="_blank" rel="nofollow">兴农网</a>
+    	             |<a href="http://www.mlogcn.com/" target="_blank" rel="nofollow">象辑科技</a>
+    	             |<a href="http://www.tianqi.com/" target="_blank" rel="nofollow">天气网</a>
+				</p>
+			</section>
+			<section class = "footer_down">
+				<p>关于我们|联系我们|批评建议</p>
+				<p>Copyright © 2016-2016 BNU, All Rights Reserved</p>
+				<p>北京师范大学 版权所有</p>
+			</section>
+		</footer>
+	</div>
+	<script type = "text/javascript" src = "/web_media/js/jquery-2.2.1.min.js"></script>
+	<script type = "text/javascript" src = "/web_media/js/bootstrap.min.js"></script>
+	<script type = "text/javascript" src = "/web_media/js/highcharts.js"></script>
+	<script type = "text/javascript" src = "/web_media/js/highcharts-more.js"></script>
+	
+	<!--[if lt IE 9]>
+  		<script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  		<script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<script type = "text/javascript" src = /web_media/js/painting.js></script>
+</body>
+</html>
+
+
