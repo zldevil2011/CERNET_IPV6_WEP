@@ -1,5 +1,9 @@
 body{
 	font: 14px/1.6 "Microsoft Yahei","Tahoma","SimSun";
+	background-image:url(/web_media/images/blue_sky2.png);
+	/*background-size:cover;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/web_media/images/blue_sky.png',  sizingMethod='scale')
+	*/
 }
 .w100{
 	width:100%;
@@ -184,6 +188,7 @@ big{
 	/*margin-top: 10px;*/
     background-color: rgba(0,0,0,0.75);
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0,startColorstr = '#aa000000', endColorstr = '#aa000000' )\9;
+	/**/
 }
 .footer h2{
 	padding-top: 10px;
