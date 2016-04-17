@@ -4,3 +4,6 @@ $("#index").on("click", function(){
 $("#data").on("click", function(){
 	window.location.href = "/data";
 })
+$("#products").on("click", function(){
+	window.location.href = "/products";
+})
