@@ -7,3 +7,6 @@ $("#data").on("click", function(){
 $("#products").on("click", function(){
 	window.location.href = "/products";
 })
+$("#material").on("click", function(){
+	window.location.href = "/material";
+})
