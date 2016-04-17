@@ -184,6 +184,12 @@ big{
 .real_info .tab-content .factor_explanation{
 	text-align:center;
 }
+.main_body table{
+	border:1px solid red;
+}
+.middle{
+	align:center;
+}
 .footer{
 	/*margin-top: 10px;*/
     background-color: rgba(0,0,0,0.75);
@@ -227,4 +233,22 @@ big{
 }
 .table>tbody>tr>td:first-child{
 	align:center;
+}
+
+/* css for dataInfo Page */
+.main_body .dataInfo{
+	width: 80%;
+	margin: 0 auto;
+}
+.main_body .dataInfo table{
+	width: 100%;
+	margin: 0 auto;
+}
+.main_body .dataInfo .dataImage{
+	width:50%;
+	margin:15px auto;
+}
+.main_body .dataInfo .dataImage img{
+	width: 100%;
+	margin: 0 auto;
 }
