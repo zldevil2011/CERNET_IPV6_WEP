@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %} data  preview {% endblock %}
+{% block main_body %}
+<div class =  "main_body">	
+	<div class = "row clearfix">
+		<div class = "col-md-2">
+			<section>
+			    <p class = "bg-primary btn-sm"><span class = "glyphicon glyphicon-play"></span>&nbsp;选择产品种类</p>
+				<select class="form-control">
+					<option>叶面积指数</option>
+			  		<option>森林面积观测</option>
+			  		<option>空气质量</option>
+			  		<option>水质质量</option>
+			  		<option>下行辐射</option>
+				</select>
+			<section>
+		</div>
+		<div class = "col-md-10">
+			<section>
+			    <p class = "bg-primary btn-sm"><span class = "glyphicon glyphicon-search"></span>&nbsp;产品列表</p>
+			</section>
+			<section>
+				<table class="table table-striped table-hover">
+				<thead class = "btn-info">
+					<tr>
+						<th>产品ID</th>
+						<th>产品名称</th>
+						<th>开始时间</th>
+						<th>结束时间</th>
+						<th>数据大小</th>
+						<th>产品介绍</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class = "data_style">
+						<td>1</td>
+						<td>新疆省叶面积</td>
+						<td>01/04/2011</td>
+						<td>01/04/2012</td>
+						<td>63.3G</td>
+						<td><a href = "{% url 'productInfo' 1%}">链接</a></td>
+					</tr>
+					<tr class = "data_style">
+						<td>2</td>
+						<td>甘肃省叶面积</td>
+						<td>01/04/2011</td>
+						<td>01/04/2012</td>
+						<td>63.3G</td>
+						<td><a href = "{% url 'productInfo' 1%}">链接</a></td>
+					</tr>
+					<tr class = "data_style">
+						<td>3</td>
+						<td>古省叶面积</td>
+						<td>01/04/2011</td>
+						<td>01/04/2012</td>
+						<td>63.3G</td>
+						<td><a href = "{% url 'productInfo' 1%}">链接</a></td>
+					</tr>
+					<tr class = "data_style">
+						<td>4</td>
+						<td>内蒙古省叶面积</td>
+						<td>01/04/2011</td>
+						<td>01/04/2012</td>
+						<td>63.3G</td>
+						<td><a href = "{% url 'productInfo' 1%}">链接</a></td>
+					</tr>
+					<tr class = "data_style">
+						<td>5</td>
+						<td>湖北省叶面积</td>
+						<td>01/04/2011</td>
+						<td>01/04/2012</td>
+						<td>63.3G</td>
+						<td><a href = "{% url 'productInfo' 1%}">链接</a></td>
+					</tr>
+				</tbody>
+			</table>
+			</section>
+		</div>
+	</div>
+</div>
+{% endblock %}
