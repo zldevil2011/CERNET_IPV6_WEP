@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'app',
+	'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -132,3 +133,29 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yeah.net'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'zldevil2011@yeah.net'
+EMAIL_HOST_PASSWORD = 'a1234567890'
+EMAIL_SUBJECT_PREFIX = '[Hacker_XL]'
+EMAIL_USE_TLS = False
+SERVER_EMAIL = 'zldevil2011@yeah.net'
+
+#MEMCACHE
+CACHES = {
+	'default': {
+		'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+		'LOCATION' : '127.0.0.1:11211',
+	}
+}
+
+REST_FRAMEWORK = {
+	'DEFAULT_PERMISSION_CLASSES':(
+		#'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+		'rest_framework.permissions.IsAdminUser',	
+	),
+	'PAGE_SIZE':10
+}
