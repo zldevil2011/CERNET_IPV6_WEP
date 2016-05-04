@@ -2,12 +2,11 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.contrib.auth.models import User
 
 #用户信息
 class AppUser(models.Model):
-	user_id = models.AutoField(primary_key = True)
-	username = models.CharField(max_length = 100)
-	password = models.CharField(max_length = 100)
+	user = models.OneToOneField(User)
 	sex = models.IntegerField(default = 0)
 	nickname = models.CharField(max_length = 30)
 	portrait = models.CharField(max_length = 200, null = True)

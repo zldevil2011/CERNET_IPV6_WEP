@@ -134,15 +134,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.yeah.net'
+EMAIL_HOST = 'smtp.163.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = 'zldevil2011@yeah.net'
+EMAIL_HOST_USER = 'zldevil2011@163.com'
 EMAIL_HOST_PASSWORD = 'a1234567890'
-EMAIL_SUBJECT_PREFIX = '[Hacker_XL]'
+EMAIL_SUBJECT_PREFIX = '[12Golf]'
 EMAIL_USE_TLS = False
-SERVER_EMAIL = 'zldevil2011@yeah.net'
+SERVER_EMAIL = 'zldevil2011@163.com'
 
 #MEMCACHE
 CACHES = {
