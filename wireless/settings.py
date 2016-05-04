@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'wireless',
 		'USER': 'root',
 		'PASSWORD':'Long@680920',
-		'HOST': '127.0.0.1',
+		'HOST': 'localhost',
 		'PORT': '3306',
 		#'OPTIONS': {'charset': 'utf8mb4'},
     }

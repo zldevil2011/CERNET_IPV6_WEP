@@ -16,7 +16,7 @@ class AppUser(models.Model):
 	location = models.CharField(max_length = 100, null = True)
 	
 	def __unicode__(self):
-		return str(self.username)
+		return str(self.id)
 
 
 #管理员信息
