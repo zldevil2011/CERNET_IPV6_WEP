@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 	'app',
 	'rest_framework',
+	'oauth2_provider',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -90,7 +91,7 @@ DATABASES = {
         'NAME': 'wireless',
 		'USER': 'root',
 		'PASSWORD':'Long@680920',
-		'HOST': '127.0.0.1',
+		'HOST': 'localhost',
 		'PORT': '3306',
 		#'OPTIONS': {'charset': 'utf8mb4'},
     }
@@ -150,10 +151,21 @@ CACHES = {
 	}
 }
 
-REST_FRAMEWORK = {
-	'DEFAULT_PERMISSION_CLASSES':(
-		#'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-		'rest_framework.permissions.IsAdminUser',	
-	),
-	'PAGE_SIZE':10
+#REST_FRAMEWORK = {
+#	'DEFAULT_PERMISSION_CLASSES':(
+#		#'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#		'rest_framework.permissions.IsAdminUser',	
+#	),
+#	'PAGE_SIZE':10
+#}
+
+#OAUTH2
+OAUTH2_PROVIDER = {
+	'ACCESS_TOKEN_EXPIRE_SECONDS' : 60 * 60 * 24 * 360 * 100,
+	'AUTHORIZATION_CODE_EXPIRE_SECONDS' : 60 * 60 * 24 * 360 * 100,
+	'SCOPES': {'read' : 'Read scope', 'write' : 'Write scope', 'groups' : 'Access to your groups'}
 }
+
+OAUTH_APPLICATION_NAME = 'wireless'
+OAUTH2_GET_TOKEN_URL = 'http://127.0.0.1/o/token/'
+OAUTH2_REVOKE_TOKEN_URL = 'http://127.0.0.1/o/revoke_token/'
