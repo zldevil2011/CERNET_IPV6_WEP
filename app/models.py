@@ -28,4 +28,20 @@ class Admin(models.Model):
 
 	def __unicode__(self):
 		return str(self.username)
+
+
+# 空气质量
+class Air(models.Model):
+	air_id = models.AutoField(primary_key = True)
+	aqi = models.IntegerField(default = 0, null = True)
+	pm25 = model.IntegerField(default = 0, null = True)
+	temperature = model.FloatField(default = 0, null = True)
+	humidity = model.FloatField(default = 0, null = True)
+	cloud = models.CharField(max_length=200, null = True)
+	cloud_speed = model.FloatField(default = 0, null = True)
+	weather = model.CharField(max_length=200, null = True)
+
+	def __unicode__(self):
+		return str(self.air_id)
+
 # Create your models here.
