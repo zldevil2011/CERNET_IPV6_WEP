@@ -3,9 +3,12 @@ import views.index
 import views.data
 import views.products
 import views.material
+import views.server.index
+
 urlpatterns = [
-	url('^$', views.index.index, name="index"),
-	url('^data$', views.data.index, name="data_index"),
+	url('^$', views.server.index.index, name="index"),
+	url('^home/$', views.index.index, name="wsn_index"),
+	url('^data/$', views.data.index, name="data_index"),
 	url('^dataInfo/(\d+)/$', views.data.dataInfo, name="dataInfo"),
 	url('^products/$', views.products.index, name="products_index"),
 	url('^productInfo/(\d+)/$', views.products.productInfo, name="productInfo"),
