@@ -28,4 +28,64 @@ class Admin(models.Model):
 
 	def __unicode__(self):
 		return str(self.username)
+
+
+# 空气质量
+class Air(models.Model):
+	air_id = models.AutoField(primary_key = True)
+	aqi = models.IntegerField(default = 0, null = True)
+	pm25 = models.IntegerField(default = 0, null = True)
+	temperature = models.FloatField(default = 0, null = True)
+	humidity = models.FloatField(default = 0, null = True)
+	cloud = models.CharField(max_length=200, null = True)
+	cloud_speed = models.FloatField(default = 0, null = True)
+	weather = models.CharField(max_length=200, null = True)
+	location = models.CharField(max_length = 200, null = True)
+	date = models.DateField(auto_now_add = True)
+	time = models.TimeField(auto_now_add = True)
+	
+	def __unicode__(self):
+		return str(self.air_id)
+
+# 预报
+class Forecast(models.Model):
+	forecast_id = models.AutoField(primary_key = True)
+	date = models.DateField(auto_now_add = True)
+	week = models.CharField(max_length = 200, null = True)
+	weather_day = models.CharField(max_length = 200, null = True)
+	weather_night = models.CharField(max_length = 200, null = True)
+	temperature_high = models.FloatField(default = 0.0)
+	temperature_low = models.FloatField(default = 0.0)
+	cloud = models.CharField(max_length = 200, null = True)
+	cloud_speed = models.FloatField(default = 0.0)
+	aqi = models.IntegerField(default = 0)
+	status = models.CharField(max_length = 100, null = True)
+	
+	def __unicode__(self):
+		return str(self.forecast_id)
+
+# 云图
+class Nephogram(models.Model):
+	nephogram_id = models.AutoField(primary_key = True)
+	classification = models.CharField(max_length=200, null = True)
+	title = models.CharField(max_length = 200, null = True)
+	image_path = models.CharField(max_length = 300, null = True)
+
+	def __unicode__(self):
+		return str(self.nephogram_id)
+
+
+# news
+class News(models.Model):
+	news_id = models.AutoField(primary_key = True)
+	title = models.CharField(max_length=200, null = True)
+	content = models.TextField(null = True)
+	author = models.CharField(max_length = 200, null = True)
+	time = models.DateTimeField(auto_now_add = True)
+	read_count = models.IntegerField(default = 0, null = True)
+	
+	def __unicode__(self):
+		return str(self.news_id)
+
+
 # Create your models here.

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF8">
+    <title>{% block title %}What are you looking for?{% endblock %}</title>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet" type="text/css"  href = "/web_media/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href = "/web_media/css/server_style.css">
+</head>
+<body>
+	{% block content %}
+	<div id="container">
+		<div class="section active" id="section0">
+			<div class = "vertical-center">
+				<h1>What Are You looking for ?</h1><br/>
+				<div class="horizontal-text-center"><span class = "glyphicon glyphicon-arrow-down"></span></div>
+			</div>
+		</div>
+		<div class="section" id="section1">			
+			<div class = "vertical-center">
+				<h1>Earth ? </h1>
+				<Button type="button" class="btn btn-info btn-sm btn-block mt10" onclick = "wsnHome()">
+				   go<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+				</Button>
+			</div>
+		</div>
+		<div class="section" id="section2">
+			<h1 class = "vertical-center">hacker?</h1>
+		</div>
+		<div class="section" id="section3">
+			<!--<h1 class = "vertical-center">Something else?</h1>-->
+		</div>
+	</div>
+	{% endblock %}
+    <script type = "text/javascript" src = "/web_media/js/jquery-2.2.1.min.js"></script>
+    <script type = "text/javascript" src = "/web_media/js/bootstrap.min.js"></script>
+    <script type = "text/javascript" src = "/web_media/js/highcharts.js"></script>
+    <script type = "text/javascript" src = "/web_media/js/highcharts-more.js"></script>
+    
+    <!--[if lt IE 9]>
+        <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+        <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/web_media/js/pageswitch.js"></script>
+    <script type="text/javascript" src="/web_media/js/server.js"></script>
+</body>
+</html>
+
