@@ -1,4 +1,5 @@
 from django.conf.urls import url, patterns, include
+from django.views.generic import TemplateView
 import views.index
 import views.data
 import views.products
@@ -14,5 +15,6 @@ urlpatterns = [
 	url('^productInfo/(\d+)/$', views.products.productInfo, name="productInfo"),
 	url('^material/$', views.material.index, name="material_index"),
 	url('^productInfo/(\d+)/$', views.material.materialInfo, name="materialInfo"),
+	url('^nephogram/$', TemplateView.as_view(template_name="nephogram.html")),
 #     # url('^welcome/$', views.welcome.welcome(), name="welcome"),
 ]
