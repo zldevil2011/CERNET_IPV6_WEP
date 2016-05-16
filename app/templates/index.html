@@ -1,7 +1,43 @@
 {% extends "base.html" %}
 {% block title %} welcome  {% endblock %}    
 {% block main_body %}
-<div class = "main_body">
+    <div class="row clearfix width-parent-70" style="background: rgba(6,135,147,0.5);">
+        <div class="col-md-3 horizontal-center">
+            <h4 class="city_name">北京</h4>
+            <p class="date-time-index">2016-05-16 周一</p>
+            <p class="today-time" title="更新时间 20:40">20:40</p>
+        </div>
+
+        <div class="col-md-6 horizontal-center">
+            <div class="slider_states">
+                <p class="slider_whicon_w"><img class="slider_whicon png24" src="http://www.sinaimg.cn/dy/weather/main/index14/007/icons_128_wt/w_01_01_01.png" height="128" width="128" alt="晴"></p>
+                <div class="today-degree">26℃</div>
+                <p class="today-detail">
+                    晴&nbsp;&nbsp;|&nbsp;&nbsp;西南风3级&nbsp;&nbsp;|&nbsp;&nbsp;湿度：22%
+                </p>
+            </div>
+        </div>
+        <div class="col-md-3 horizontal-center">
+            <div class="warning-box">
+                <h6 class="warning-index">污染指数</h6>
+                <p class="warning-value">43</p>
+                <div class="horizontal-center" style="position: relative;">
+                    <span class="slider_warn_map_i">优</span>
+                    <span class="slider_warn_map_i slider_warn_map_i0 slider_warn_map_i_on">&nbsp;</span>
+                    <span class="slider_warn_map_i slider_warn_map_i1 ">&nbsp;</span>
+                    <span class="slider_warn_map_i slider_warn_map_i2 ">&nbsp;</span>
+                    <span class="slider_warn_map_i slider_warn_map_i3 ">&nbsp;</span>
+                    <span class="slider_warn_map_i slider_warn_map_i4 ">&nbsp;</span>
+                    <span class="slider_warn_map_i slider_warn_map_i5 ">&nbsp;</span>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class = "main_body">
 	<div class = "row clearfix">
 		<div class = "col-md-8">
 			<section>

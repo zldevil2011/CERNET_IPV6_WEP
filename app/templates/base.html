@@ -6,44 +6,63 @@
 	<meta name = "viewport" content = "width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+{#    <meta name="viewport" content="width=1010">#}
 	<link rel="stylesheet" type="text/css"  href = "/web_media/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href = "/web_media/css/style.css">
 </head>
 <body>
 	<div class = "container container_opacity" style = "width:100%;padding-left:0;padding-right:0;">
 		<header class = "light_blue">
-			<div class="row clearfix head_item">
-				<div class = "col-md-6 column">
-					今天是2016年3月14日 星期一 农历二月初六
-				</div>
-				<div class = "col-md-2 column col-md-offset-1">
-					 <a id="mobile" href="#mobileApp" role="button" class="btn" data-toggle="modal">手机客户端</a>
-				</div>
-				<div class = "col-md-2 column col-md-offset-1">
-					联系我们
-				</div>
+			<div class="row clearfix light_gray nav-border">
+				<nav class="navbar navbar-default light_gray head_item" role="navigation">
+                    <div class="navbar-header">
+                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#weatherMenu">
+                             <span class="sr-only">Toggle navigation</span>
+                             <span class="icon-bar"></span><span class="icon-bar"></span>
+                             <span class="icon-bar"></span>
+                         </button>
+                        <a class="navbar-brand" href="#">WSN</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="weatherMenu">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                 <a href="#">今天是2016-05-16</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                 <a href="#mobileApp" data-toggle="modal">客户端下载</a>
+                            </li>
+                            <li>
+                                 <a href="#">联系我们</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 			</div>
-			<div class = "row clearfix head_item head pad">
-				<div class = "col-md-4" style = "height:34px;line-height:34px">
-					<img class = "img_rounded"  src = "/web_media/images/Chine_weather.png">
-				</div>
-				<div class = "col-md-4">
-					<div class = "input-group">
-						<input type = “text” class = "form-control">
-						<span class = "input-group-addon" >Search</span>
-					</div>
-				</div>
-				<div class = "col-md-4" style = "height:34px;line-height:34px;text-align:right;">
-					15C/3C 多云
-				</div>
+			<div class = "row clearfix light_white" >
+                <div class="row clearfix head_item">
+                    <div class = "col-md-1 col-sm-4 padTB10 horizontal-center">
+					    <img class = "img-circle"  src = "/web_media/images/gongpeng.png" width="40" height="40">
+				    </div>
+                    <div class = "col-md-offset-3 col-md-4 col-sm-8 padTB10 horizontal-center">
+					    <span style="font-size: 20px;">wireless network sensor</span>
+				    </div>
+                    <div class = "col-md-2 hidden-xs col-md-offset-2 padTB10">
+                        <span style="font-size: 20px;">北京 晴 30度</span>
+                    </div>
+                </div>
 			</div>
-			<div class = "row clearfix head_item head pad navigation_item">
-				<div class = "col-md-2" id = "index">首页</div>
-				<div class = "col-md-2" id = "data">数据</div>
-				<div class = "col-md-2" id = "products">产品</div>
-				<div class = "col-md-2" id = "material">资料</div>
-				<div class = "col-md-2" id = "software">软件</div>
-				<div class = "col-md-2" id = "service">服务</div>
+            <div class="row clearfix navbar-inverse ">
+				<div class = "row clearfix head_item head padTB5 navigation_item">
+                    <div class = "col-md-2" id = "index">首页</div>
+                    <div class = "col-md-2" id = "data">数据</div>
+                    <div class = "col-md-2" id = "products">产品</div>
+                    <div class = "col-md-2" id = "material">资料</div>
+                    <div class = "col-md-2" id = "software">软件</div>
+                    <div class = "col-md-2" id = "service">服务</div>
+			    </div>
 			</div>
 		</header>
 		{% block main_body %}

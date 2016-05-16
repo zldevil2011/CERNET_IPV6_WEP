@@ -1,9 +1,27 @@
 body{
 	font: 14px/1.6 "Microsoft Yahei","Tahoma","SimSun";
-	background-image:url(/web_media/images/blue_sky2.png);
+	/*background-image:url(/web_media/images/blue_sky2.png);*/
+	background-image:url(http://i0.sinaimg.cn/dy/weather/main/index14/007/bg_body/night/bg_01.jpg;);
 	/*background-size:cover;
 	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/web_media/images/blue_sky.png',  sizingMethod='scale')
 	*/
+}
+.vertical-table-cell-middle{
+	 display: table-cell;
+	vertical-align: middle;
+}
+
+.light_gray{
+	background-color: #f7f7f7;
+	border-color:#f7f7f7;
+}
+.light_white{
+	background-color: #FFFFFF;
+	border-color:#ffffff;
+}
+.nav-border{
+	border-top: 3px solid #277471;
+    border-bottom: 1px solid #e5e5e5;
 }
 .horizontal-center-block{
 	margin: 0 auto;
@@ -24,19 +42,40 @@ body{
 }
 .light_blue{
 	background-color:#F5FAFE;
-	border-bottom: 4px solid #8D9E93;
+	/*border-bottom: 4px solid #8D9E93;*/
 }
 .head_item{
 	width:70%;
 	margin: 0 auto;
 }
-.pad{
+.width-parent-70{
+	width:70%;
+	margin: 0 auto;
+}
+@media screen and (max-width: 600px) {
+	.head_item{
+		width:100%;
+		margin: 0 auto;
+	}
+	.width-parent-70{
+		width:100%;
+		margin: 0 auto;
+	}
+}
+
+.padTB20{
 	padding:20px 0;
 }
+.padTB10{
+	padding:10px 0;
+}
 .navigation_item > div{
+	padding: 10px 2px;
 	text-align:center;
-	border-left:solid 1px black;
+	/*border-left:solid 1px black;*/
 	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 16px;
 }
 .navigation_item div:first-child{
 	border: none;
@@ -46,6 +85,90 @@ body{
 	margin:0 auto;
 	background:#FFFFFF;
 	/*background: #408AA7;*/
+}
+.city_name {
+    height: 40px;
+    line-height: 40px;
+    font-size: 28px;
+    font-weight: normal;
+    color: #fff;
+}
+.date-time-index{
+	line-height: 30px;
+    font-size: 18px;
+    color: #fff;
+}
+.today-time {
+    width: auto;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 99px;
+    font-size: 14px;
+    font-family: arial;
+    color: #fff;
+    background: url(http://i3.sinaimg.cn/dy/weather/main/index14/007/icons_time.png) 12px 4px no-repeat;
+    background-color: rgba(0,0,0,0.4);
+    transition: background-color ease 0.3s;
+}
+.today-detail {
+    width: 100%;
+    height: 41px;
+    line-height: 41px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border-radius: 99px;
+    background-color: rgba(0,0,0,0.3);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0,startColorstr = '#aa000000', endColorstr = '#aa000000' )\9;
+    transition: background-color ease 0.3s;
+}
+.today-degree {
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    font-size: 125px;
+    color: #fff;
+}
+.warning-box{
+	border-top: 1px solid rgba(255,255,255,0.4);
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+	margin-top: 50%;
+	margin-bottom: 50%;
+}
+.warning-box{
+	font-size: 14px;
+    color: #fff;
+}
+
+.slider_warn_map_i {
+    position: absolute;
+    display: inline-block;
+	margin-left:1px;
+    z-index: 1;
+    bottom: 1px;
+    width: 16px;
+    height: 5px;
+    /*font-size: 0;*/
+    line-height: 0;
+    transition: opacity 0.3s ease;
+}
+.slider_warn_map_i0{ left: 10px; background-color: #72AF3C;}
+.slider_warn_map_i1{ left: 27px; background-color: #FFD630;}
+.slider_warn_map_i2{ left: 44px; background-color: #C88F35;}
+.slider_warn_map_i3{ left: 61px; background-color: #E66000;}
+.slider_warn_map_i4{ left: 78px; background-color: #E60000;}
+.slider_warn_map_i5{ left: 95px; background-color: #7646A3;}
+.slider_warn_map_i_on {
+     height: 15px;
+}
+@media screen and (max-width: 600px) {
+	.warning-box{
+		border-top: 1px solid rgba(255,255,255,0.4);
+		border-bottom: 1px solid rgba(255,255,255,0.4);
+		margin-top: 1%;
+		margin-bottom: 1%;
+	}
 }
 .up_border{
 	margin: 40px 0 0 0;
