@@ -184,6 +184,31 @@ body{
 	width:100%;
 
 }
+.week-weather{
+	color: #FFFFFF;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 1rem;
+}
+.week-weather .col-md-2:not(:last-child){
+	padding:3px;
+	border-right: 2px dotted rgba(255,255,255,0.5);
+}
+.week-weather .col-md-2 > div{
+	padding:3px;
+}
+.week-weather-info {
+	margin: 0 auto;
+	display: block;
+    width: 90%;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border-radius: 99px;
+    background-color: #ffb533;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0,startColorstr = '#aa000000', endColorstr = '#aa000000' )\9;
+    transition: background-color ease 0.3s;
+}
 .main_body .row .up_border h3{
 	font: 800 28px/1.4 黑体;
 	color: #0E0E0E;
