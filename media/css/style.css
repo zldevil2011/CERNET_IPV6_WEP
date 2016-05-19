@@ -216,6 +216,10 @@ body{
 	padding: 0px 10px;
     margin-top: 10px;
 }
+.main-city .alert{
+	background: rgba(6,135,147,0.5);
+	color: white;
+}
 .main_body .row .up_border h3{
 	font: 800 28px/1.4 黑体;
 	color: #0E0E0E;
