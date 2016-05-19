@@ -95,220 +95,62 @@
             </div>
         </div>
     </div>
+    <div class="row clearfix width-parent-70" style="background: rgba(0,0,0,0.75);margin-top: 10px;">
+        <div class="col-md-6 index-tab-item">
+            <ul class="nav nav-tabs" role = "tablist">
+                <li class="active" role = "presentation">
+                     <a href="#temperature" aria-controls="temperature" role="tab" data-toggle="tab" >气温</a>
+                </li>
+                <li role = "presentation">
+                     <a href="#rainfall" aria-controls="rainfall" role="tab" data-toggle="tab" >降雨量</a>
+                </li>
+            </ul>
 
-    <div class = "main_body"  style="background: rgba(0,0,0,0.75);">
-	<div class = "row clearfix">
-		<div class = "col-md-8">
-			<section>
-				<ul class="nav nav-tabs" role = "tablist">
-					<li class="active" role = "presentation">
-						 <a href="#today" aria-controls="today" role="tab" data-toggle="tab" >今日天气</a>
-					</li>
-					<li role = "presentation">
-						 <a href="#week" aria-controls="week" role="tab" data-toggle="tab" >七日天气</a>
-					</li>
-					<li role = "presentation">
-						 <a href="#month" aria-controls="month" role="tab" data-toggle="tab" >一月天气</a>
-					</li>
-					<li role = "presentation">
-						 <a href="#year" aria-controls="year" role="tab" data-toggle="tab" >一年天气</a>
-					</li>
-				</ul>
-				
-				<div class="tab-content">
-					<div role="tabpanel" class="tab-pane active" id="today">
-						<div class = "row clearfix">
-							<div class = "col-md-7" id = "real_windy_speed">
-								<div id = "real_wind" class = "w100"></div>
-								<div style = "float:left;padding-left:25%;font: 14px/1.6 'Microsoft Yahei','Tahoma','SimSun';color: #252525;">相对湿度:143</div>
-								<div style = "float:right;padding-right:25%;font: 14px/1.6 'Microsoft Yahei','Tahoma','SimSun';color: #252525";>污染值:200</div>	
-							</div>
-							<div class = "col-md-2 border_1px h100">
-								<h1>白天</h1>
-								<big class = "weather_icon d00"></big>
-								<p class = "wea_info">多云转晴，平原地区有轻微霾</p>
-								<p>
-									<span>15</span>
-									<em>°C</em>
-								</p>
-							</div>
-							<div class = "col-md-2 col-md-offset-1 border_1px h100">
-								<h1>晚上</h1>
-								<big class = "weather_icon n00"></big>
-								<p class = "wea_info">多云转晴，平原地区有轻微霾</p>
-								<p>
-									<span>15</span>
-									<em>°C</em>
-								</p>
-							</div>
-						</div>	
-					</div>
-					<div role="tabpanel" class="tab-pane w100" id="week">
-						<ul class = "week_weather">
-							<li>
-								<h1>30日（明天）</h1>
-								<big class="weather_icon d00"></big>
-								<big class="weather_icon n00"></big>
-								<p class="wea" title="晴">晴</p>
-								<p class="tem">
-									<span>5</span>/
-									<i>-6</i>
-								</p>
-								<p class="win">
-									<i>3-4级转微风</i>
-								</p>
-								<div class="slid"></div>
-							</li>
-							<li>
-								<h1>30日（明天）</h1>
-								<big class="weather_icon d00"></big>
-								<big class="weather_icon n00"></big>
-								<p class="wea" title="晴">晴</p>
-								<p class="tem">
-									<span>5</span>/
-									<i>-6</i>
-								</p>
-								<p class="win">
-									<i>3-4级转微风</i>
-								</p>
-								<div class="slid"></div>
-							</li>
-							<li>
-								<h1>30日（明天）</h1>
-								<big class="weather_icon d00"></big>
-								<big class="weather_icon n00"></big>
-								<p class="wea" title="晴">晴</p>
-								<p class="tem">
-									<span>5</span>/
-									<i>-6</i>
-								</p>
-								<p class="win">
-									<i>3-4级转微风</i>
-								</p>
-								<div class="slid"></div>
-							</li>
-							<li>
-								<h1>30日（明天）</h1>
-								<big class="weather_icon d00"></big>
-								<big class="weather_icon n00"></big>
-								<p class="wea" title="晴">晴</p>
-								<p class="tem">
-									<span>5</span>/
-									<i>-6</i>
-								</p>
-								<p class="win">
-									<i>3-4级转微风</i>
-								</p>
-								<div class="slid"></div>
-							</li>
-							<li>
-								<h1>30日（明天）</h1>
-								<big class="weather_icon d00"></big>
-								<big class="weather_icon n00"></big>
-								<p class="wea" title="晴">晴</p>
-								<p class="tem">
-									<span>5</span>/
-									<i>-6</i>
-								</p>
-								<p class="win">
-									<i>3-4级转微风</i>
-								</p>
-								<div class="slid"></div>
-							</li>
-							<li>
-								<h1>30日（明天）</h1>
-								<big class="weather_icon d00"></big>
-								<big class="weather_icon n00"></big>
-								<p class="wea" title="晴">晴</p>
-								<p class="tem">
-									<span>5</span>/
-									<i>-6</i>
-								</p>
-								<p class="win">
-									<i>3-4级转微风</i>
-								</p>
-								<div class="slid"></div>
-							</li>
-							<li>
-								<h1>30日（明天）</h1>
-								<big class="weather_icon d00"></big>
-								<big class="weather_icon n00"></big>
-								<p class="wea" title="晴">晴</p>
-								<p class="tem">
-									<span>5</span>/
-									<i>-6</i>
-								</p>
-								<p class="win">
-									<i>3-4级转微风</i>
-								</p>
-								<div class="slid"></div>
-							</li>
-						</ul>
-					</div>
-					<div role="tabpanel" class="tab-pane w100" id="month">	
-						<div id="month_container" style="min-width:700px;height:400px"></div>
-					</div>
-					<div role="tabpanel" class="tab-pane w100" id="year">	
-						<div id="year_container" style="min-width:700px;height:400px"></div>
-					</div>
-				</div>
-			</section>
-			<section class = "real_info">
-				<div class="col-md-12 column">
-					<ul class="nav nav-pills" role = "tablist">
-						<li class="disabled info_tip">
-							整点气象信息
-						</li>
-						<li role = "presentation" class="pull-right">
-							 <a href="#tem" aria-controls="tem" role="tab" data-toggle="tab" >温度</a>
-						</li>
-						<li role = "presentation" class="pull-right">
-							 <a href="#humidity" aria-controls="humidity" role="tab" data-toggle="tab" >湿度</a>
-						</li>
-						<li role = "presentation" class="pull-right">
-							 <a href="#precipitation" aria-controls="precipitation" role="tab" data-toggle="tab" >降水量</a>
-						</li>
-						<li role = "presentation" class="pull-right">
-							 <a href="#cloud" aria-controls="cloud" role="tab" data-toggle="tab" >风力风向</a>
-						</li>
-						<li role = "presentation" class="active pull-right">
-							 <a href="#air_quality" aria-controls="air_quality" role="tab" data-toggle="tab" >空气质量</a>
-						</li>
-					</ul>
-					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane w100" id="tem">
-							<div id = "real_info_tem" style = "min-width:700px;height:400px"></div>
-							<div class = "factor_explanation">温度：表示大气冷热程度的物理量，气象上给出的温度是指离地面1.5米高度上百叶箱中的空气温度。</div>
-						</div>
-						<div role="tabpanel" class="tab-pane w100" id="humidity">
-							<div id = "real_info_humidity" style = "min-width:700px;height:400px;"></div>
-							<div class = "factor_explanation">相对湿度：空气中实际水汽压与当时气温下的饱和水汽压之比，以百分比（%）表示。</div>
-						</div>
-						<div role="tabpanel" class="tab-pane w100" id="precipitation">
-							<div id = "real_info_precipitation" style = "min-width:700px;height:400px;"></div>
-							<div class = "factor_explanation">降水量：某一时段内的未经蒸发、渗透、流失的降水，在水平面上积累的深度，以毫米（mm）位单位。</div>
-						</div>
-						<div role="tabpanel" class="tab-pane w100" id="cloud">
-							<div id = "real_info_cloud" style = "min-width:700px;height:400px;"></div>
-							<div class = "factor_explanation">风力风向：空气的水平运动，风力是风吹到物体上所表示出力量的大小，风向指风的来向。</div>
-						</div>
-						<div role="tabpanel" class="tab-pane active w100" id="air_quality">
-							<div id = "real_info_air_quality" style = "min-width:700px;height:400px;"></div>
-							<div class = "factor_explanation">空气质量指数：简称AQI，是定量描述空气质量状况的无量纲指数。</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-		<div class = "col-md-4 up_border">
-			<img alt = "quote" src = "/web_media/images/gongpeng.png">
-			<h3>智慧环保平台，环保生活</h3>
-			<div>
-                <h4>水文|环境|生活</h4>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="temperature">
+                    <div class = "clearfix">
+                        <div id="temperature-chart" style="height: 300px; width: 100%;"></div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane active" id="rainfall">
+                    <div class="clearfix">
+                        <div id="rainfall-chart"    style="height: 300px; width: 100%;"></div>
+                    </div>
+                </div>
             </div>
-			<button type="button" class="btn btn-primary btn-lg" style="width:40%;margin-left: 5%;" onclick="window.location.href='/air'">信息观测</button>
-			<button type="button" class="btn btn-success btn-lg" style="width:40%;margin-left: 5%;">产品介绍</button>
-		</div>
-	</div>
-</div>
+
+        </div>
+        <div class="col-md-6">
+            <h5 style="color: #337ab7;">气象云图</h5>
+            <img id="nephogram" src="http://image.nmc.cn/product/2016/05/15/WXCL/small/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_20160515001500000.JPG"
+                 width="100%" height="300">
+        </div>
+    </div>
+
+
+{#    <div class = "main_body"  style="background: rgba(0,0,0,0.75);">#}
+{#        <div class = "clearfix">#}
+{#            <div class = "col-md-8">#}
+{#                <div class="clearfix">#}
+{#                    <div class="col-md-3">XX</div>#}
+{#                    <div class="col-md-3">1</div>#}
+{#                    <div class="col-md-3">2</div>#}
+{#                    <div class="col-md-3">3</div>#}
+{#                    <div class="col-md-3">4</div>#}
+{#                    <div class="col-md-3">5</div>#}
+{#                    <div class="col-md-3">6</div>#}
+{#                    <div class="col-md-3">7</div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class = "col-md-4 up_border">#}
+{#                <img alt = "quote" src = "/web_media/images/gongpeng.png">#}
+{#                <h3>智慧环保平台，环保生活</h3>#}
+{#                <div>#}
+{#                    <h4>水文|环境|生活</h4>#}
+{#                </div>#}
+{#                <button type="button" class="btn btn-primary btn-lg" style="width:40%;margin-left: 5%;" onclick="window.location.href='/air'">信息观测</button>#}
+{#                <button type="button" class="btn btn-success btn-lg" style="width:40%;margin-left: 5%;">产品介绍</button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
 {% endblock %}

@@ -14,7 +14,6 @@
 	console.log(nextTime);
 	var font = 0;
 	function update(){
-		
 		console.log(nextTime);
 		nextTime = nextTime + 30;
 		console.log(nextTime);
@@ -38,9 +37,11 @@
 			font = 0;
 		}
 		var nextURL = "http://image.nmc.cn/product/2016/05/15/WXCL/small/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_20160515" + nextNum + "00000.JPG";
-		$("#nephogram").attr("src", nextURL);
+		console.log(nextURL);
+        $("#nephogram").attr("src", nextURL);
 	}
 	$(function(){
+        console.log("XXXXX");
 		setInterval('update()', 1000);
 	});
 </script>
