@@ -14,7 +14,7 @@ $("#material").on("click", function(){
 var nextTime = 15;
 console.log(nextTime);
 var font = 0;
-var time
+var time;
 $(function(){
     try{
         setInterval('timeUpdate()', 1000);
@@ -76,4 +76,54 @@ function imageUpdate(){
 
 	console.log(nextURL);
     $("#nephogram").attr("src", nextURL);
+}
+//data real-image
+var real_image_time = 15;
+var real_image_font = 0;
+var real_time;
+$(function(){
+    try{
+        //setInterval('realImageUpdate()', 1000);
+        var real_image_update = setInterval('realImageUpdate()', 1000);
+        $(".radar").on("click", function(){
+            var nextURL = "http://image.nmc.cn/product/2016/05/20/RDCP/medium/SEVP_AOC_RDCP_SLDAS_EBREF_ACHN_L88_PI_20160520000000001.GIF";
+            $("#real-image").attr("src", nextURL);
+            clearInterval(real_image_update);
+        });
+    }catch(exception){
+
+    }
+});
+function realImageUpdate(){
+    real_image_time = real_image_time + 30;
+    if(real_image_time > 60){
+        real_image_font = real_image_font + 1;
+        real_image_time = 15;
+    }
+    var nextNum = "";
+    if(real_image_font < 10){
+        nextNum = "0" + real_image_font;
+    }else{
+        nextNum = "" + real_image_font;
+    }
+    nextNum +=  real_image_time.toString();
+    if(parseInt(nextNum) > 2345){
+        nextNum = "0015";
+        real_image_time = 15;
+        real_image_font = 0;
+    }
+	var today = new Date();
+	var month = today.getMonth() + 1;
+	var day = today.getDate();
+	day = day - 2;
+	if(month <10){
+		month = "0" + String(month);
+	}
+	if(day < 10){
+		day = "0" + String(day);
+	}
+	var monthDay = String(month) + String(day);
+
+    var nextURL = "http://image.nmc.cn/product/2016/"+month + "/" + day + "/WXCL/medium/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_2016" + monthDay + nextNum + "00000.JPG";
+    $("#real-image").attr("src", nextURL);
 }

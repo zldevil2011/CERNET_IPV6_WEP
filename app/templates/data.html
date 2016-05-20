@@ -2,22 +2,30 @@
 {% block title %} data  preview {% endblock %}
 {% block main_body %}
 <div class =  "main_body">	
-	<div class = "row clearfix">
+	<div class = "clearfix" style="background: rgba(76,135,147,0.5);">
 		<div class = "col-md-2">
-			<section>
-			    <p class = "bg-primary btn-sm"><span class = "glyphicon glyphicon-play"></span>&nbsp;选择产品种类</p>
-				<select class="form-control">
-					<option>叶面积指数</option>
-			  		<option>森林面积观测</option>
-			  		<option>空气质量</option>
-			  		<option>水质质量</option>
-			  		<option>下行辐射</option>
-				</select>
-			<section>
+            <p class = "bg-primary btn-sm"><span class = "glyphicon glyphicon-play"></span>&nbsp;数据</p>
+            <ul class="list-unstyled type-list">
+                <li><div class="">叶面积指数</div></li>
+                <li><div class="">森林面积观测</div></li>
+                <li><div class="">空气质量</div></li>
+                <li><div class="">水质质量</div></li>
+                <li><div class="">下行辐射</div></li>
+            </ul>
+            <p class = "bg-primary btn-sm"><span class = "glyphicon glyphicon-play"></span>&nbsp;实况云图</p>
+            <ul class="list-unstyled type-list">
+                <li><div class="">卫星云图</div></li>
+                <li><div class="radar">雷达图</div></li>
+                <li><div class="">降水量</div></li>
+                <li><div class="">气温</div></li>
+                <li><div class="">风</div></li>
+                <li><div class="">土壤水分</div></li>
+            </ul>
 		</div>
-		<div class = "col-md-10">
+		<div class = "col-md-10 data">
 			<section>
 			    <p class = "bg-primary btn-sm"><span class = "glyphicon glyphicon-search"></span>&nbsp;筛选条件</p>
+
 			    <form class = "bg-warning btn-sm form-inline">
 			 		<div class="form-group">
 			 	   		<label for="start_time">开始时间</label>
@@ -27,11 +35,14 @@
 			 	   		<label for="end_time">结束时间</label>
 			 	   		<input type="date" class="form-control" id="end_time">
 			 	 	</div>
-			 	 	<button type="submit" class="btn btn-default">搜索</button>
+                    <div class="form-group">
+			 	   		<button type="submit" class="btn btn-default">搜索</button>
+			 	 	</div>
+
 				</form>
 			</section>
 			<section>
-				<table class="table table-striped table-hover">
+				<table class="table table-responsive table-data">
 				<thead class = "btn-info">
 					<tr>
 						<th>
@@ -40,7 +51,7 @@
 						<th>
 							预览图
 						</th>
-						<th>
+						<th class="hidden-sm hidden-md">
 							图像日期
 						</th>
 						<th>
@@ -54,41 +65,47 @@
 				<tbody>
 					<tr class = "data_style">
 						<td><input type="checkbox"></td>
-						<td><img alt="data_info" src="/web_media/images/data.png" width = 70 height = 70 class="img-rounded" />	</td>
+						<td><img alt="data_info" src="/web_media/images/data.png" width = 30 height = 30 class="img-rounded" />	</td>
 						<td>01/04/2012</td>
 						<td>63.3 / 33.7	</td>
 						<td><a href = "{% url 'dataInfo' 1%}">链接</a></td>
 					</tr>
 					<tr class = "data_style">
 						<td><input type="checkbox"></td>
-						<td><img alt="data_info" src="/web_media/images/data.png" width = 70 height = 70 class="img-rounded" />	</td>
+						<td><img alt="data_info" src="/web_media/images/data.png" width = 30 height = 30 class="img-rounded" />	</td>
 						<td>01/04/2012</td>
 						<td>63.3 / 33.7	</td>
 						<td><a href = "{% url 'dataInfo' 1%}">链接</a></td>
 					</tr>
 					<tr class = "data_style">
 						<td><input type="checkbox"></td>
-						<td><img alt="data_info" src="/web_media/images/data.png" width = 70 height = 70 class="img-rounded" />	</td>
+						<td><img alt="data_info" src="/web_media/images/data.png" width = 30 height = 30 class="img-rounded" />	</td>
 						<td>01/04/2012</td>
 						<td>63.3 / 33.7	</td>
 						<td><a href = "{% url 'dataInfo' 1%}">链接</a></td>
 					</tr>
 					<tr class = "data_style">
 						<td><input type="checkbox"></td>
-						<td><img alt="data_info" src="/web_media/images/data.png" width = 70 height = 70 class="img-rounded" />	</td>
+						<td><img alt="data_info" src="/web_media/images/data.png" width = 30 height = 30 class="img-rounded" />	</td>
 						<td>01/04/2012</td>
 						<td>63.3 / 33.7	</td>
 						<td><a href = "{% url 'dataInfo' 1%}">链接</a></td>
 					</tr>
 					<tr class = "data_style">
 						<td><input type="checkbox"></td>
-						<td><img alt="data_info" src="/web_media/images/data.png" width = 70 height = 70 class="img-rounded" />	</td>
+						<td><img alt="data_info" src="/web_media/images/data.png" width = 30 height = 30 class="img-rounded" />	</td>
 						<td>01/04/2012</td>
 						<td>63.3 / 33.7	</td>
 						<td><a href = "{% url 'dataInfo' 1%}">链接</a></td>
 					</tr>
 				</tbody>
 			</table>
+			</section>
+		</div>
+        <div class = "col-md-10 real-time horizontal-center">
+			<section>
+			    <p class = "bg-primary btn-sm"><span class = "glyphicon glyphicon-search"></span>&nbsp; 实时图像</p>
+			    <img id = "real-image" src = "http://image.nmc.cn/product/2016/05/15/WXCL/medium/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_20160515001500000.JPG"/>
 			</section>
 		</div>
 	</div>
