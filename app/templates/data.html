@@ -14,12 +14,12 @@
             </ul>
             <p class = "bg-primary btn-sm"><span class = "glyphicon glyphicon-play"></span>&nbsp;实况云图</p>
             <ul class="list-unstyled type-list">
-                <li><div class="">卫星云图</div></li>
+                <li><div class="satellite-cloud-image">卫星云图</div></li>
                 <li><div class="radar">雷达图</div></li>
-                <li><div class="">降水量</div></li>
-                <li><div class="">气温</div></li>
-                <li><div class="">风</div></li>
-                <li><div class="">土壤水分</div></li>
+                <li><div class="precipitation">降水量</div></li>
+                <li><div class="temperature">气温</div></li>
+                <li><div class="cloudy">风</div></li>
+                <li><div class="soil-humidity">土壤水分</div></li>
             </ul>
 		</div>
 		<div class = "col-md-10 data">
@@ -51,13 +51,13 @@
 						<th>
 							预览图
 						</th>
-						<th class="hidden-sm hidden-md">
+						<th>
 							图像日期
 						</th>
-						<th>
+						<th class="hidden-xs">
 							经纬度
 						</th>
-						<th>
+						<th class="hidden-xs">
 							数据详情	
 						</th>
 					</tr>
@@ -67,36 +67,36 @@
 						<td><input type="checkbox"></td>
 						<td><img alt="data_info" src="/web_media/images/data.png" width = 30 height = 30 class="img-rounded" />	</td>
 						<td>01/04/2012</td>
-						<td>63.3 / 33.7	</td>
-						<td><a href = "{% url 'dataInfo' 1%}">链接</a></td>
+						<td class="hidden-xs">63.3 / 33.7	</td>
+						<td class="hidden-xs"><a href = "{% url 'dataInfo' 1%}">链接</a></td>
 					</tr>
 					<tr class = "data_style">
 						<td><input type="checkbox"></td>
 						<td><img alt="data_info" src="/web_media/images/data.png" width = 30 height = 30 class="img-rounded" />	</td>
 						<td>01/04/2012</td>
-						<td>63.3 / 33.7	</td>
-						<td><a href = "{% url 'dataInfo' 1%}">链接</a></td>
+						<td class="hidden-xs">63.3 / 33.7	</td>
+						<td class="hidden-xs"><a href = "{% url 'dataInfo' 1%}">链接</a></td>
 					</tr>
 					<tr class = "data_style">
 						<td><input type="checkbox"></td>
 						<td><img alt="data_info" src="/web_media/images/data.png" width = 30 height = 30 class="img-rounded" />	</td>
 						<td>01/04/2012</td>
-						<td>63.3 / 33.7	</td>
-						<td><a href = "{% url 'dataInfo' 1%}">链接</a></td>
+						<td class="hidden-xs">63.3 / 33.7	</td>
+						<td class="hidden-xs"><a href = "{% url 'dataInfo' 1%}">链接</a></td>
 					</tr>
 					<tr class = "data_style">
 						<td><input type="checkbox"></td>
 						<td><img alt="data_info" src="/web_media/images/data.png" width = 30 height = 30 class="img-rounded" />	</td>
 						<td>01/04/2012</td>
-						<td>63.3 / 33.7	</td>
-						<td><a href = "{% url 'dataInfo' 1%}">链接</a></td>
+						<td class="hidden-xs">63.3 / 33.7	</td>
+						<td class="hidden-xs"><a href = "{% url 'dataInfo' 1%}">链接</a></td>
 					</tr>
 					<tr class = "data_style">
 						<td><input type="checkbox"></td>
 						<td><img alt="data_info" src="/web_media/images/data.png" width = 30 height = 30 class="img-rounded" />	</td>
 						<td>01/04/2012</td>
-						<td>63.3 / 33.7	</td>
-						<td><a href = "{% url 'dataInfo' 1%}">链接</a></td>
+						<td class="hidden-xs">63.3 / 33.7	</td>
+						<td class="hidden-xs"><a href = "{% url 'dataInfo' 1%}">链接</a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -105,7 +105,7 @@
         <div class = "col-md-10 real-time horizontal-center">
 			<section>
 			    <p class = "bg-primary btn-sm"><span class = "glyphicon glyphicon-search"></span>&nbsp; 实时图像</p>
-			    <img id = "real-image" src = "http://image.nmc.cn/product/2016/05/15/WXCL/medium/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_20160515001500000.JPG"/>
+			    <img id = "real-image" src = "http://image.nmc.cn/product/2016/05/15/WXCL/medium/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_20160515001500000.JPG" width="100%"/>
 			</section>
 		</div>
 	</div>

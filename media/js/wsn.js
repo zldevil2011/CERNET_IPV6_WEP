@@ -15,6 +15,7 @@ var nextTime = 15;
 console.log(nextTime);
 var font = 0;
 var time;
+
 $(function(){
     try{
         setInterval('timeUpdate()', 1000);
@@ -77,16 +78,41 @@ function imageUpdate(){
 	console.log(nextURL);
     $("#nephogram").attr("src", nextURL);
 }
+
+
 //data real-image
 var real_image_time = 15;
 var real_image_font = 0;
 var real_time;
 $(function(){
     try{
-        //setInterval('realImageUpdate()', 1000);
         var real_image_update = setInterval('realImageUpdate()', 1000);
+        $(".satellite-cloud-image").on("click", function(){
+            real_image_update = setInterval('realImageUpdate()', 1000);
+        });
         $(".radar").on("click", function(){
             var nextURL = "http://image.nmc.cn/product/2016/05/20/RDCP/medium/SEVP_AOC_RDCP_SLDAS_EBREF_ACHN_L88_PI_20160520000000001.GIF";
+            $("#real-image").attr("src", nextURL);
+            clearInterval(real_image_update);
+            console.log("clear The Time");
+        });
+        $(".precipitation").on("click", function(){
+            var nextURL = "http://image.nmc.cn/product/2016/05/24/STFC/medium/SEVP_NMC_STFC_SFER_ER1_ACHN_L88_PB_20160524010000000.jpg";
+            $("#real-image").attr("src", nextURL);
+            clearInterval(real_image_update);
+        });
+        $(".temperature").on("click", function(){
+            var nextURL = "http://image.nmc.cn/product/2016/05/24/STFC/medium/SEVP_NMC_STFC_SFER_ET0_ACHN_L88_PB_20160524010000000.jpg";
+            $("#real-image").attr("src", nextURL);
+            clearInterval(real_image_update);
+        });
+        $(".cloudy").on("click", function(){
+            var nextURL = "http://image.nmc.cn/product/2016/05/24/STFC/medium/SEVP_NMC_STFC_SFER_EDA_ACHN_L88_PB_20160524010000000.jpg";
+            $("#real-image").attr("src", nextURL);
+            clearInterval(real_image_update);
+        });
+        $(".soil-humidity").on("click", function(){
+            var nextURL = "http://image.nmc.cn/product/2016/05/23/AMSM/medium/SEVP_NMC_AMSM_CAGMSS_ESRH_ACHN_L10CM_PS_20160523000000000.jpg";
             $("#real-image").attr("src", nextURL);
             clearInterval(real_image_update);
         });
@@ -95,6 +121,7 @@ $(function(){
     }
 });
 function realImageUpdate(){
+    console.log("zzzz");
     real_image_time = real_image_time + 30;
     if(real_image_time > 60){
         real_image_font = real_image_font + 1;
