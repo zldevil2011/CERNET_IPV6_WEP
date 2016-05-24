@@ -10,7 +10,9 @@ body{
 	 display: table-cell;
 	vertical-align: middle;
 }
-
+.hander{
+	cursor: pointer;
+}
 .light_gray{
 	background-color: #f7f7f7;
 	border-color:#f7f7f7;
@@ -182,7 +184,6 @@ body{
 .up_border img{
 	margin-top: 2px;
 	width:100%;
-
 }
 .week-weather{
 	color: #FFFFFF;
@@ -229,6 +230,19 @@ body{
 	margin: 14px;
 	padding-top: 15px;
 	border-top: 1px #0E0E0E solid;
+}
+
+.type-list > li > div {
+    padding: 0;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+	border-color: #d6e9c6;
+    border-radius: 4px;
+    text-align: center;
+	cursor: pointer;
+}
+.table-data > thead > tr > th, .table-data > tbody > tr > td{
+	text-align: center;
 }
 .main_body .row .up_border div h4{
 	font: 800 20px/1.4 黑体;
@@ -355,7 +369,7 @@ big{
 	text-align:center;
 }
 .main_body table{
-	border:1px solid red;
+	border: 1px dotted;
 }
 .middle{
 	align:center;
@@ -401,9 +415,9 @@ big{
 .table>tbody>tr>td{
 	vertical-align: middle;
 }
-.table>tbody>tr>td:first-child{
-	align:center;
-}
+/*.table>tbody>tr>td:first-child{*/
+	/*align:center;*/
+/*}*/
 
 /* css for dataInfo Page */
 .main_body .dataInfo{

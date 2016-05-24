@@ -443,48 +443,17 @@ $(function(){
 
 });
 
-var nextTime = 15;
-console.log(nextTime);
-var font = 0;
 //index canvasjs
 $(function(){
     try{
         rainfull();
         temperature();
         $("#rainfall").removeClass("active");
-        setInterval('imageUpdate()', 1000);
     }catch(exception){
 
     }
 
 });
-function imageUpdate(){
-	console.log(nextTime);
-    nextTime = nextTime + 30;
-    console.log(nextTime);
-    if(nextTime > 60){
-        font = font + 1;
-        nextTime = 15;
-    }
-    var nextNum = "";
-    if(font < 10){
-        nextNum = "0" + font;
-    }else{
-        nextNum = "" + font;
-    }
-    console.log(nextNum);
-    console.log(nextTime);
-    nextNum +=  nextTime.toString();
-    console.log(nextNum);
-    if(parseInt(nextNum) > 1345){
-        nextNum = "0015";
-        nextTime = 15;
-        font = 0;
-    }
-    var nextURL = "http://image.nmc.cn/product/2016/05/15/WXCL/small/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_20160515" + nextNum + "00000.JPG";
-    console.log(nextURL);
-    $("#nephogram").attr("src", nextURL);
-}
 
 function rainfull(){
     var chart = new CanvasJS.Chart("temperature-chart", {
