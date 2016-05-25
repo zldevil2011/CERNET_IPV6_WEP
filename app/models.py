@@ -1,10 +1,10 @@
 #coding:utf-8
 from __future__ import unicode_literals
-
 from django.db import models
 from django.contrib.auth.models import User
 
-#用户信息
+
+# 用户信息
 class AppUser(models.Model):
 	user = models.OneToOneField(User)
 	sex = models.IntegerField(default = 0)
@@ -14,7 +14,7 @@ class AppUser(models.Model):
 	register_date = models.DateField(auto_now_add = True)
 	phone = models.CharField(max_length=20, null=True)
 	location = models.CharField(max_length = 100, null = True)
-	
+
 	def __unicode__(self):
 		return str(self.id)
 
@@ -34,8 +34,10 @@ class Admin(models.Model):
 class Air(models.Model):
 	air_id = models.AutoField(primary_key = True)
 	aqi = models.IntegerField(default = 0, null = True)
-	pm25 = models.IntegerField(default = 0, null = True)
+	pm25 = models.CharField(max_length=200, null = True)
 	temperature = models.FloatField(default = 0, null = True)
+	high_temperature = models.FloatField(default= 0, null=True)
+	low_temperature = models.FloatField(default= 0,  null=True)
 	humidity = models.FloatField(default = 0, null = True)
 	cloud = models.CharField(max_length=200, null = True)
 	cloud_speed = models.FloatField(default = 0, null = True)
@@ -47,15 +49,17 @@ class Air(models.Model):
 	def __unicode__(self):
 		return str(self.air_id)
 
+
 # 预报
 class Forecast(models.Model):
 	forecast_id = models.AutoField(primary_key = True)
+	location = models.CharField(max_length = 200, null = True)
 	date = models.DateField(auto_now_add = True)
 	week = models.CharField(max_length = 200, null = True)
 	weather_day = models.CharField(max_length = 200, null = True)
 	weather_night = models.CharField(max_length = 200, null = True)
-	temperature_high = models.FloatField(default = 0.0)
-	temperature_low = models.FloatField(default = 0.0)
+	high_temperature = models.FloatField(default = 0.0)
+	low_temperarture = models.FloatField(default = 0.0)
 	cloud = models.CharField(max_length = 200, null = True)
 	cloud_speed = models.FloatField(default = 0.0)
 	aqi = models.IntegerField(default = 0)
