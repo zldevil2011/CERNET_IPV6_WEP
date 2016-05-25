@@ -3,24 +3,24 @@
 {% block main_body %}
     <div class="row clearfix width-parent-70" style="background: rgba(6,135,147,0.5);">
         <div class="col-md-3 horizontal-center">
-            <h4 class="city_name">北京</h4>
-            <p class="date-time-index">2016-05-16 周一</p>
+            <h4 class="city_name">{{ latest.location }}</h4>
+            <p class="date-time-index">{{ latest.date }}</p>
             <p class="today-time" title="当前时间"></p>
         </div>
 
         <div class="col-md-6 horizontal-center">
             <div class="slider_states">
-                <p class="slider_whicon_w"><img class="slider_whicon png24" src="http://www.sinaimg.cn/dy/weather/main/index14/007/icons_128_wt/w_01_01_01.png" height="128" width="128" alt="晴"></p>
-                <div class="today-degree">26℃</div>
+                <p class="slider_whicon_w"><img class="slider_whicon png24" src="http://www.sinaimg.cn/dy/weather/main/index14/007/icons_128_wt/w_02_08_00.png" height="128" width="128" alt="晴"></p>
+                <div class="today-degree">{{ latest.temperature }}℃</div>
                 <p class="today-detail">
-                    晴&nbsp;&nbsp;|&nbsp;&nbsp;西南风3级&nbsp;&nbsp;|&nbsp;&nbsp;湿度：22%
+                    {{ latest.weather }}&nbsp;&nbsp;|&nbsp;&nbsp;{{ latest.cloud }}{{ latest.cloud_speed }}级&nbsp;&nbsp;|&nbsp;&nbsp;湿度：{{ latest.humidity }}%
                 </p>
             </div>
         </div>
         <div class="col-md-3 horizontal-center">
             <div class="warning-box">
                 <h6 class="warning-index">污染指数</h6>
-                <p class="warning-value">43</p>
+                <p class="warning-value">{{ latest.pm25 }}</p>
                 <div class="horizontal-center">
                     优
 {#                    <span class="slider_warn_map_i horizontal-center-absolute"></span>#}
@@ -45,54 +45,16 @@
             <div class="col-md-10 hidden-sm"></div>
         </div>
         <div class="clearfix week-weather">
+            {% for fore in forecast %}
             <div class="col-md-2">
-                <div>05-19</div>
-                <div>星期四</div>
-                <div>白天/黑夜</div>
-                <div>29℃/13℃</div>
-                <div>南风 3级</div>
+                <div>{{ fore.date }}</div>
+                <div>{{ fore.week }}</div>
+                <div>{{ fore.weather_day }}/{{ fore.weather_night }}</div>
+                <div>{{ fore.high_temperature }}℃/{{ fore.low_temperature }}℃</div>
+                <div>{{ fore.cloud }} {{ fore.cloud_speed }}</div>
                 <span class="week-weather-info">72 良</span>
             </div>
-            <div class="col-md-2">
-                <div>05-19</div>
-                <div>星期四</div>
-                <div>白天/黑夜</div>
-                <div>29℃/13℃</div>
-                <div>南风 3级</div>
-                <span class="week-weather-info">72 良</span>
-            </div>
-            <div class="col-md-2">
-                <div>05-19</div>
-                <div>星期四</div>
-                <div>白天/黑夜</div>
-                <div>29℃/13℃</div>
-                <div>南风 3级</div>
-                <span class="week-weather-info">72 良</span>
-            </div>
-            <div class="col-md-2">
-                <div>05-19</div>
-                <div>星期四</div>
-                <div>白天/黑夜</div>
-                <div>29℃/13℃</div>
-                <div>南风 3级</div>
-                <span class="week-weather-info">72 良</span>
-            </div>
-            <div class="col-md-2">
-                <div>05-19</div>
-                <div>星期四</div>
-                <div>白天/黑夜</div>
-                <div>29℃/13℃</div>
-                <div>南风 3级</div>
-                <span class="week-weather-info">72 良</span>
-            </div>
-            <div class="col-md-2">
-                <div>05-19</div>
-                <div>星期四</div>
-                <div>白天/黑夜</div>
-                <div>29℃/13℃</div>
-                <div>南风 3级</div>
-                <span class="week-weather-info">72 良</span>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <div class="row clearfix width-parent-70" style="background: rgba(0,0,0,0.75);margin-top: 10px;">

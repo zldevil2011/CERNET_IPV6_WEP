@@ -43,8 +43,8 @@ class Air(models.Model):
 	cloud_speed = models.FloatField(default = 0, null = True)
 	weather = models.CharField(max_length=200, null = True)
 	location = models.CharField(max_length = 200, null = True)
-	date = models.DateField(auto_now_add = True)
-	time = models.TimeField(auto_now_add = True)
+	date = models.CharField(max_length=200, null=True)
+	time = models.CharField(max_length=200, null=True)
 	
 	def __unicode__(self):
 		return str(self.air_id)
@@ -54,14 +54,14 @@ class Air(models.Model):
 class Forecast(models.Model):
 	forecast_id = models.AutoField(primary_key = True)
 	location = models.CharField(max_length = 200, null = True)
-	date = models.DateField(auto_now_add = True)
+	date = models.CharField(max_length = 200, null=True)
 	week = models.CharField(max_length = 200, null = True)
 	weather_day = models.CharField(max_length = 200, null = True)
 	weather_night = models.CharField(max_length = 200, null = True)
 	high_temperature = models.FloatField(default = 0.0)
-	low_temperarture = models.FloatField(default = 0.0)
+	low_temperature = models.FloatField(default = 0.0)
 	cloud = models.CharField(max_length = 200, null = True)
-	cloud_speed = models.FloatField(default = 0.0)
+	cloud_speed = models.CharField(max_length=200, null=True)
 	aqi = models.IntegerField(default = 0)
 	status = models.CharField(max_length = 100, null = True)
 	
