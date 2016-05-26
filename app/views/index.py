@@ -11,7 +11,7 @@ import datetime
 @cache_page(15*60)
 def index(request):
 	location='北京'
-	weekArr = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
+	weekArr = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六","星期天"]
 	latest = Air.objects.filter(location=location).order_by('-time')[0]
 	today = datetime.date.today()
 	week = weekArr[today.weekday()]
