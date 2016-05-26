@@ -16,7 +16,7 @@ def index(request):
 	today = datetime.date.today()
 	week = weekArr[today.weekday()]
 	print latest
-	forecast = Forecast.objects.filter(location=location).order_by('date')
+	forecast = Forecast.objects.filter(location=location).order_by('date')[0:6]
 	print forecast
 	for fore in forecast:
 		fore.week = weekArr[int(fore.week)]
