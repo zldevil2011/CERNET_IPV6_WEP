@@ -5,6 +5,7 @@ import views.index
 import views.data
 import views.products
 import views.material
+import views.onlineTool
 import views.server.index
 
 urlpatterns = [
@@ -17,5 +18,7 @@ urlpatterns = [
 	url('^material/$', views.material.index, name="material_index"),
 	url('^productInfo/(\d+)/$', views.material.materialInfo, name="materialInfo"),
 	url('^nephogram/$', TemplateView.as_view(template_name="nephogram.html")),
+	url('^onlineTool/$', views.onlineTool.index, name="onlineTool"),
+	url('^onlineTool/(\d+)/$', views.onlineTool.calculator, name="onlineTool"),
 #     # url('^welcome/$', views.welcome.welcome(), name="welcome"),
 ]

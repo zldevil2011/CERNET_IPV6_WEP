@@ -10,6 +10,9 @@ $("#products").on("click", function(){
 $("#material").on("click", function(){
 	window.location.href = "/material";
 });
+$("#service").on("click", function(){
+	window.location.href = "/onlineTool";
+});
 //index js
 var nextTime = 15;
 console.log(nextTime);
