@@ -63,7 +63,7 @@ function imageUpdate(){
 	var today = new Date();
 	var month = today.getMonth() + 1;
 	var day = today.getDate();
-	day = day - 2;
+	day = day;
 	if(month <10){
 		month = "0" + String(month);
 	}
@@ -84,43 +84,65 @@ function imageUpdate(){
 var real_image_time = 15;
 var real_image_font = 0;
 var real_time;
+
+//RPIC
+var RPICTip = 0;
 $(function(){
     try{
-        var real_image_update = setInterval('realImageUpdate()', 1000);
+        var real_image_update = setInterval('realSatelliteCloudImageUpdate()', 1000);
+        var RPIC = setInterval("updateRPTC('/RDCP/medium/SEVP_AOC_RDCP_SLDAS_EBREF_ACHN_L88_PI_2016', '0000001.PNG')");
+        clearInterval(RPIC);
         $(".satellite-cloud-image").on("click", function(){
-            real_image_update = setInterval('realImageUpdate()', 1000);
+            clearInterval(RPIC);
+            real_image_update = setInterval('realSatelliteCloudImageUpdate()', 1000);
         });
         $(".radar").on("click", function(){
-            var nextURL = "http://image.nmc.cn/product/2016/05/20/RDCP/medium/SEVP_AOC_RDCP_SLDAS_EBREF_ACHN_L88_PI_20160520000000001.GIF";
-            $("#real-image").attr("src", nextURL);
+            RPICTip = 0;
             clearInterval(real_image_update);
+            clearInterval(RPIC);
+            RPIC = setInterval("updateRPTC('/RDCP/medium/SEVP_AOC_RDCP_SLDAS_EBREF_ACHN_L88_PI_2016', '3000001.PNG')", 1000);
             console.log("clear The Time");
         });
         $(".precipitation").on("click", function(){
-            var nextURL = "http://image.nmc.cn/product/2016/05/24/STFC/medium/SEVP_NMC_STFC_SFER_ER1_ACHN_L88_PB_20160524010000000.jpg";
-            $("#real-image").attr("src", nextURL);
+            RPICTip = 0;
             clearInterval(real_image_update);
+            clearInterval(RPIC);
+            RPIC = setInterval("updateRPTC('/STFC/medium/SEVP_NMC_STFC_SFER_ER1_ACHN_L88_PB_2016', '0000000.jpg')", 1000);
         });
         $(".temperature").on("click", function(){
-            var nextURL = "http://image.nmc.cn/product/2016/05/24/STFC/medium/SEVP_NMC_STFC_SFER_ET0_ACHN_L88_PB_20160524010000000.jpg";
-            $("#real-image").attr("src", nextURL);
+            RPICTip = 0;
             clearInterval(real_image_update);
+            clearInterval(RPIC);
+            RPIC = setInterval("updateRPTC('/STFC/medium/SEVP_NMC_STFC_SFER_ET0_ACHN_L88_PB_2016', '0000000.jpg')", 1000);
         });
         $(".cloudy").on("click", function(){
-            var nextURL = "http://image.nmc.cn/product/2016/05/24/STFC/medium/SEVP_NMC_STFC_SFER_EDA_ACHN_L88_PB_20160524010000000.jpg";
-            $("#real-image").attr("src", nextURL);
+            //var nextURL = "http://image.nmc.cn/product/2016/05/24/STFC/medium/SEVP_NMC_STFC_SFER_EDA_ACHN_L88_PB_20160524010000000.jpg";
+            RPICTip = 0;
             clearInterval(real_image_update);
+            clearInterval(RPIC);
+            RPIC = setInterval("updateRPTC('/STFC/medium/SEVP_NMC_STFC_SFER_EDA_ACHN_L88_PB_2016', '0000000.jpg')", 1000);
         });
         $(".soil-humidity").on("click", function(){
-            var nextURL = "http://image.nmc.cn/product/2016/05/23/AMSM/medium/SEVP_NMC_AMSM_CAGMSS_ESRH_ACHN_L10CM_PS_20160523000000000.jpg";
-            $("#real-image").attr("src", nextURL);
+            var today = new Date();
+            var month = today.getMonth() + 1;
+            var day = today.getDate();
+            if(month <10){
+                month = "0" + String(month);
+            }
+            if(day < 10){
+                day = "0" + String(day);
+            }
+            var monthDay = String(month) + String(day);
+            var nextURL = "http://image.nmc.cn/product/2016/" + month + "/" + day + "/AMSM/medium/SEVP_NMC_AMSM_CAGMSS_ESRH_ACHN_L10CM_PS_2016" + monthDay + "000000000.jpg";
             clearInterval(real_image_update);
+            clearInterval(RPIC);
+            $("#real-image").attr("src", nextURL);
         });
     }catch(exception){
 
     }
 });
-function realImageUpdate(){
+function realSatelliteCloudImageUpdate(){
     console.log("zzzz");
     real_image_time = real_image_time + 30;
     if(real_image_time > 60){
@@ -142,7 +164,7 @@ function realImageUpdate(){
 	var today = new Date();
 	var month = today.getMonth() + 1;
 	var day = today.getDate();
-	day = day - 2;
+	day = day;
 	if(month <10){
 		month = "0" + String(month);
 	}
@@ -152,5 +174,29 @@ function realImageUpdate(){
 	var monthDay = String(month) + String(day);
 
     var nextURL = "http://image.nmc.cn/product/2016/"+month + "/" + day + "/WXCL/medium/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_2016" + monthDay + nextNum + "00000.JPG";
+    $("#real-image").attr("src", nextURL);
+}
+function updateRPTC(type, lastP){
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var hour = today.getHours();
+    RPICTip = RPICTip + 1;
+    if(RPICTip > (hour - 8)){
+        RPICTip = 0;
+    }
+    var timeParameter = RPICTip;
+    if(timeParameter < 10){
+        timeParameter = "0" + timeParameter;
+    }
+
+    if(month <10){
+		month = "0" + String(month);
+	}
+	if(day < 10){
+		day = "0" + String(day);
+	}
+    var monthDay = String(month) + String(day);
+    var nextURL = "http://image.nmc.cn/product/2016/" + month + "/" + day + type + monthDay + timeParameter + lastP;
     $("#real-image").attr("src", nextURL);
 }
