@@ -6,11 +6,19 @@
              style="position:relative; height: 385px;background-color: #49c8f2;">
             <h1>请选择需要进行转换的图片</h1>
             <div class="vertical-center horizontal-center" style="background-color: #46bfe7;border-color: #3ca3c5;width: 90%; margin: 0 auto;border:2px dotted;">
-                <div class="glyphicon glyphicon-file btn-block padTB20" style="font-size:100px; display: none;"></div>
+                <div class="glyphicon glyphicon-file padLR20 padTB20" style="font-size:100px; display: none;"></div>
+                <div class="glyphicon glyphicon-hand-right padLR20" style="font-size: 100px; display: none;"></div>
+                <div class="glyphicon glyphicon-file padLR20" style="font-size:100px; display: none;"></div>
                 <button id = "fileinput-select-button" class="btn btn-block btn-info btn-lg horizontal-center" onclick="path.click()">
                    <input type="file" id="path" style="display:none"><span id="btn-tip">选择文件</span>
                </button>
+                <div class="padTB20">
+                    <button id = "fileinput-transfer-button" class="btn btn-success horizontal-center" style="float: right;">转换</button>
+                    <button id = "fileinput-upload-button" class="btn btn-primary horizontal-center" style="float: right;">上传</button>
+
+                </div>
             </div>
+
         </div>
 	<div>
 {% endblock %}
@@ -18,15 +26,19 @@
     <script>
         $(function(){
             $("#path").on("change", selectFile);
-            $(".fileinput-upload-button").on("click", uploadFile);
+            $("#fileinput-upload-button").on("click", uploadFile);
+            $("#fileinput-transfer-button").on("click", transferFile);
         });
         function selectFile(){
             var fileName = $("#path").val();
             console.log(fileName);
             $("#btn-tip").html(fileName);
-            $(".glyphicon-file").show();
+            $(".glyphicon").show();
         }
         function uploadFile(){
+{#            $(".glyphicon-hand-right").slideDown(5000);#}
+{#            $(".glyphicon-hand-right").animate({width:300},"slow");#}
+            return false;
             alert("上传图片");
             var file_list = $("#uploadFile").prop('files');
 
@@ -54,5 +66,8 @@
             });
 
         }
+    function transferFile(){
+{#        $(".transfer-ok").show();#}
+    }
     </script>
 {% endblock %}
