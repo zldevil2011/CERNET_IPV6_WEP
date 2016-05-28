@@ -20,5 +20,6 @@ urlpatterns = [
 	url('^nephogram/$', TemplateView.as_view(template_name="nephogram.html")),
 	url('^onlineTool/$', views.onlineTool.index, name="onlineTool"),
 	url('^onlineTool/(\d+)/$', views.onlineTool.calculator, name="onlineTool"),
+	url('^onlineTool/upload/$', views.onlineTool.upload, name="upload"),
 #     # url('^welcome/$', views.welcome.welcome(), name="welcome"),
 ]

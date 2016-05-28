@@ -2,34 +2,57 @@
 {% block title %}在线工具{% endblock %}
 {% block main_body %}
 	<div class = "row clearfix main_body" style="background: rgba(6,135,147,0.5);">
-        <div class="alert alert-dismissable alert-success horizontal-center" style="position:relative; height: 385px;background-color: #49c8f2;">
-            <div class="vertical-center" style="background-color: #46bfe7;border-color: #3ca3c5; width: 90%; height: 90%; margin: 0 auto;
-            border:2px dotted;">
-                <form enctype="multipart/form-data">
-
-
-                <div class="form-group">
-                    <input id="file-1" type="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="2">
-                </div>
-                <hr>
-
-            </form>
+        <div class="alert alert-dismissable alert-success horizontal-center"
+             style="position:relative; height: 385px;background-color: #49c8f2;">
+            <h1>请选择需要进行转换的图片</h1>
+            <div class="vertical-center horizontal-center" style="background-color: #46bfe7;border-color: #3ca3c5;width: 90%; margin: 0 auto;border:2px dotted;">
+                <div class="glyphicon glyphicon-file btn-block padTB20" style="font-size:100px; display: none;"></div>
+                <button id = "fileinput-select-button" class="btn btn-block btn-info btn-lg horizontal-center" onclick="path.click()">
+                   <input type="file" id="path" style="display:none"><span id="btn-tip">选择文件</span>
+               </button>
             </div>
         </div>
 	<div>
 {% endblock %}
 {% block js %}
-        <script>
-	    $("#file-1").fileinput({
-	        uploadUrl: '#', // you must set a valid URL here else you will get an error
-	        allowedFileExtensions : ['jpg', 'png','gif'],
-	        overwriteInitial: false,
-	        maxFileSize: 1000,
-	        maxFilesNum: 10,
-	        //allowedFileTypes: ['image', 'video', 'flash'],
-	        slugCallback: function(filename) {
-	            return filename.replace('(', '_').replace(']', '_');
-	        }
-		});
-		</script>
-	{% endblock %}
+    <script>
+        $(function(){
+            $("#path").on("change", selectFile);
+            $(".fileinput-upload-button").on("click", uploadFile);
+        });
+        function selectFile(){
+            var fileName = $("#path").val();
+            console.log(fileName);
+            $("#btn-tip").html(fileName);
+            $(".glyphicon-file").show();
+        }
+        function uploadFile(){
+            alert("上传图片");
+            var file_list = $("#uploadFile").prop('files');
+
+            var fileNum = file_list.length;
+            var formdata = new FormData();
+
+            for(var i = 0; i < fileNum; ++i){
+                var keyIndex = "thumbnail";
+                formdata.append(keyIndex, file_list[i]);
+            }
+
+            $.ajax({
+                url : "/onlineTool/upload/",
+                type : "POST",
+                cache : false,
+                data : formdata,
+                processData : false,
+                contentType : false
+            }).done(function(res){
+                alert("上传成功");
+                return false;
+            }).fail(function(res){
+                alert("错误");
+                return false;
+            });
+
+        }
+    </script>
+{% endblock %}

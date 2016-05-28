@@ -36,9 +36,9 @@ function timeUpdate(){
     $(".today-time").html(currentTime);
 }
 function imageUpdate(){
-	console.log(nextTime);
+	//console.log(nextTime);
     nextTime = nextTime + 30;
-    console.log(nextTime);
+    //console.log(nextTime);
     if(nextTime > 60){
         font = font + 1;
         nextTime = 15;
@@ -49,10 +49,10 @@ function imageUpdate(){
     }else{
         nextNum = "" + font;
     }
-    console.log(nextNum);
-    console.log(nextTime);
+    //console.log(nextNum);
+    //console.log(nextTime);
     nextNum +=  nextTime.toString();
-    console.log(nextNum);
+    //console.log(nextNum);
 	try{
 
 	}catch (exception){
@@ -75,10 +75,10 @@ function imageUpdate(){
 	}
 	var monthDay = String(month) + String(day);
 
-	console.log(monthDay);
+	//console.log(monthDay);
     var nextURL = "http://image.nmc.cn/product/2016/"+month + "/" + day + "/WXCL/small/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_2016" + monthDay + nextNum + "00000.JPG";
 
-	console.log(nextURL);
+	//console.log(nextURL);
     $("#nephogram").attr("src", nextURL);
 }
 
