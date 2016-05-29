@@ -206,6 +206,13 @@ function updateRPTC(type, lastP){
 
 //onlineTool
 $(function(){
+   $(".LAI").on("click", function(){
+      window.location = "/onlineTool/1";
+   });
+});
+
+//toolWindow
+$(function(){
     $("#uploadPath").on("change", selectFile);
     $("#fileinput-upload-button").on("click", uploadFile);
     $("#fileinput-transfer-button").on("click", transferFile);
