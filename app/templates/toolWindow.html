@@ -13,10 +13,12 @@
                         <div class="glyphicon glyphicon-file original-image padLR20 padTB20" style="font-size:100px; display: none;"></div>
                     </div>
                     <div class="col-md-4">
-                        <div class="glyphicon glyphicon-hand-right processing padLR20 padTB20" style="font-size: 100px; display: none;"></div>
+                        <div class="glyphicon glyphicon glyphicon-arrow-right processing padLR20 padTB20" style="font-size: 100px; display: none;"></div>
                     </div>
                     <div class="col-md-4">
-                        <div class="glyphicon glyphicon-file padLR20 final-image padTB20" style="font-size:100px; display: none;"></div>
+                        <div class="glyphicon glyphicon-file padLR20 final-image padTB20" style="font-size:100px; display: none;">
+                            <img src="/web_media/images/loading.gif">
+                        </div>
                     </div>
                     <div class="col-md-12 padTB20">
                         <button id = "fileinput-select-button" class="btn btn-block btn-info btn-lg horizontal-center" onclick="uploadPath.click()">
@@ -25,7 +27,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="progress" style="display: none;">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
+                            <div class="progress-upload-bar progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
                                  aria-valuemin="0" aria-valuemax="100" style="width:0%;">
                                 0%
                             </div>

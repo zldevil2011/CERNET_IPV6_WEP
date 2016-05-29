@@ -216,8 +216,13 @@ function selectFile(){
     $("#btn-tip").html(fileName);
     $(".original-image").show();
 }
+function sleep(sleepTime) {
+    for(var start = Date.now(); Date.now() - start <= sleepTime; ) { }
+}
 function uploadFile(){
     alert("上传图片");
+    $(".progress").show();
+    $(".progress-upload-bar").css("width", "10%").html("10%");
     var file_list = $("#uploadPath").prop('files');
     console.log(file_list[0]);
     var fileNum = file_list.length;
@@ -225,6 +230,7 @@ function uploadFile(){
     for(var i = 0; i < fileNum; ++i){
         var keyIndex = "originalImage";
         formdata.append(keyIndex, file_list[i]);
+        $(".progress-upload-bar").css("width", "20%").html("20%");
     }
     $.ajax({
         url : "/onlineTool/upload/",
@@ -234,7 +240,8 @@ function uploadFile(){
         processData : false,
         contentType : false
     }).done(function(res){
-        alert(res);
+        //alert(res);
+        $(".progress-upload-bar").css("width", "100%").html("上传成功");
         return false;
     }).fail(function(res){
         alert(res);
@@ -242,5 +249,22 @@ function uploadFile(){
     });
 }
 function transferFile(){
-
+    $(".processing").show();
+    $(".final-image").removeClass("glyphicon-file").show();
+    var formdata = new FormData();
+    $.ajax({
+        url : "/onlineTool/transfer/",
+        type : "POST",
+        cache : false,
+        data : formdata,
+        processData : false,
+        contentType : false
+    }).done(function(res){
+        alert(res);
+        $(".final-image").html("").addClass("glyphicon-file");
+        return false;
+    }).fail(function(res){
+        alert(res);
+        return false;
+    });
 }
