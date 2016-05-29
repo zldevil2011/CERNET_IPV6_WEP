@@ -13,6 +13,8 @@ def calculator(request, id):
 
 @csrf_exempt
 def upload(request):
+	original_image = request.FILES.getlist('originalImage')
+	print original_image
 	print '11111111111111111111111111111111111111111111111111'
 	return HttpResponse("success")
 # Create your views here.

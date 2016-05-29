@@ -32,6 +32,12 @@ body{
 .horizontal-center{
 	text-align: center;
 }
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
 .horizontal-center-absolute{
 	left:50%;
 	margin-left: -123px;

@@ -203,3 +203,44 @@ function updateRPTC(type, lastP){
     var nextURL = "http://image.nmc.cn/product/2016/" + month + "/" + day + type + monthDay + timeParameter + lastP;
     $("#real-image").attr("src", nextURL);
 }
+
+//onlineTool
+$(function(){
+    $("#uploadPath").on("change", selectFile);
+    $("#fileinput-upload-button").on("click", uploadFile);
+    $("#fileinput-transfer-button").on("click", transferFile);
+});
+function selectFile(){
+    var fileName = $("#uploadPath").val();
+    console.log(fileName);
+    $("#btn-tip").html(fileName);
+    $(".original-image").show();
+}
+function uploadFile(){
+    alert("上传图片");
+    var file_list = $("#uploadPath").prop('files');
+    console.log(file_list[0]);
+    var fileNum = file_list.length;
+    var formdata = new FormData();
+    for(var i = 0; i < fileNum; ++i){
+        var keyIndex = "originalImage";
+        formdata.append(keyIndex, file_list[i]);
+    }
+    $.ajax({
+        url : "/onlineTool/upload/",
+        type : "POST",
+        cache : false,
+        data : formdata,
+        processData : false,
+        contentType : false
+    }).done(function(res){
+        alert(res);
+        return false;
+    }).fail(function(res){
+        alert(res);
+        return false;
+    });
+}
+function transferFile(){
+
+}
