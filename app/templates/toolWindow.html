@@ -3,21 +3,24 @@
 {% block main_body %}
 	<div class = "row clearfix main_body" style="background: rgba(6,135,147,0.5);">
         <div class="alert alert-dismissable alert-success horizontal-center"
-             style="position:relative; height: 385px;background-color: #49c8f2;">
+             style="position:relative; height: 700px;background-color: #49c8f2;">
             <div class="row clearfix">
                 <div class="col-md-12"><h1>请选择需要进行转换的图片</h1></div>
             </div>
             <form id="form1" method="post" onsubmit="return false;" enctype="multipart/form-data">
                 <div class="row clearfix horizontal-center" style="background-color: #46bfe7;border-color: #3ca3c5;width: 90%; margin: 0 auto;border:2px dotted;">
                     <div class="col-md-4">
-                        <div class="glyphicon glyphicon-file original-image padLR20 padTB20" style="font-size:100px; display: none;"></div>
+                        <div class="glyphicon glyphicon-file original-image padLR20 padTB20" style="font-size:100px; display: none;">
+                            <img alt="140x140" src="" width="240" height="140" class="img-thumbnail original-image-preview hidden" />
+                            <span id = "originalFile" class="hidden"></span>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <div class="glyphicon glyphicon glyphicon-arrow-right processing padLR20 padTB20" style="font-size: 100px; display: none;"></div>
                     </div>
                     <div class="col-md-4">
                         <div class="glyphicon glyphicon-file padLR20 final-image padTB20" style="font-size:100px; display: none;">
-                            <img src="/web_media/images/loading.gif">
+                            <img alt="140x140" src="/web_media/images/loading.gif" width="240" height="140" class="img-thumbnail processing-image-preview" />
                         </div>
                     </div>
                     <div class="col-md-12 padTB20">

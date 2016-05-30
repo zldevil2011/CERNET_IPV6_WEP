@@ -222,12 +222,14 @@ function selectFile(){
     console.log(fileName);
     $("#btn-tip").html(fileName);
     $(".original-image").show();
+    $(".progress-upload-bar").css("width", "0%");
+    $(".progress").css("display", "none");
 }
 function sleep(sleepTime) {
     for(var start = Date.now(); Date.now() - start <= sleepTime; ) { }
 }
 function uploadFile(){
-    alert("上传图片");
+    //alert("上传图片");
     $(".progress").show();
     $(".progress-upload-bar").css("width", "10%").html("10%");
     var file_list = $("#uploadPath").prop('files');
@@ -248,7 +250,11 @@ function uploadFile(){
         contentType : false
     }).done(function(res){
         //alert(res);
+        $(".original-image").removeClass("glyphicon-file");
+        $(".original-image-preview").removeClass("hidden").attr("src", "/web_media/images/originalImage/" + res);
+        $("#originalFile").html(res);
         $(".progress-upload-bar").css("width", "100%").html("上传成功");
+        $("#btn-tip").html("选择文件");
         return false;
     }).fail(function(res){
         alert(res);
@@ -258,7 +264,10 @@ function uploadFile(){
 function transferFile(){
     $(".processing").show();
     $(".final-image").removeClass("glyphicon-file").show();
+    $(".processing-image-preview").attr("src", "/web_media/images/loading.gif");
+    var originalFile = $("#originalFile").html();
     var formdata = new FormData();
+    formdata.append("originalFile", originalFile);
     $.ajax({
         url : "/onlineTool/transfer/",
         type : "POST",
@@ -267,8 +276,9 @@ function transferFile(){
         processData : false,
         contentType : false
     }).done(function(res){
-        alert(res);
-        $(".final-image").html("").addClass("glyphicon-file");
+        //alert(res);
+        $(".processing-image-preview").attr("src", "/web_media/images/processImage/" + res);
+        //$(".final-image").html("").addClass("glyphicon-file");
         return false;
     }).fail(function(res){
         alert(res);
