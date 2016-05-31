@@ -3,7 +3,8 @@ import sys
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import time
-import Image
+# import Image
+from PIL import Image
 
 def handle_uploaded_file(f):
     try:
@@ -28,7 +29,7 @@ def imageProcessing(filename, postfix):
 				pix[i,j] = (255,255,255)
 			else:
 				pix[i,j] = (0,0,0)
-	im.save("./media/images/processImage/" + filename + ".bmp" ,"BMP")
+	im.save("./media/images/processImage/" + filename + ".jpg")
 
 
 def index(request):
@@ -63,7 +64,7 @@ def transfer(request):
 		imageProcessing(filename, postfix)
 	except Exception, e:
 		print str(e)
-	return HttpResponse(filename + ".bmp")
+	return HttpResponse(filename + ".jpg")
 
 
 
