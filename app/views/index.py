@@ -13,7 +13,7 @@ weekArr = ["星期一", "星期二", "星期三", "星期四", "星期五", "星
 @cache_page(15*60)
 def index(request):
 	location='北京'
-	latest = Air.objects.filter(location=location).order_by('-time')[0]
+	latest = Air.objects.filter(location=location).order_by('date').order_by('-time')[0]
 	all_city_air = Air.objects.all()
 	city_list = []
 	for city in all_city_air:
@@ -36,7 +36,7 @@ def index(request):
 @csrf_exempt
 def location_city_all_info(request):
 	location = request.POST.get("location", "北京")
-	latest = Air.objects.filter(location=location).order_by('-time')[0]
+	latest = Air.objects.filter(location=location).order_by('date').order_by('-time')[0]
 	city_data = []
 	latest_dic = {}
 	latest_dic["air_id"] = latest.air_id

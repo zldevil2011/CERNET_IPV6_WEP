@@ -432,16 +432,16 @@
 //        }]
 //    });
 //});
-$(function(){
-    try{
-        var height = $("#real_windy_speed").height();
-        console.log(height);
-        $("#real_windy_speed").parent().height(height);
-    }catch(exception){
-
-    }
-
-});
+//$(function(){
+//    try{
+//        var height = $("#real_windy_speed").height();
+//        console.log(height);
+//        $("#real_windy_speed").parent().height(height);
+//    }catch(exception){
+//
+//    }
+//
+//});
 
 //index canvasjs
 $(function(){

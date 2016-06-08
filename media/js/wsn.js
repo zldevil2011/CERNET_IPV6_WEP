@@ -114,7 +114,7 @@ function updateLocationFunction(){
                 week_forecast = week_forecast + forecast[i].weather_day + '/' + forecast[i].weather_night + '</div><div>';
                 week_forecast = week_forecast + forecast[i].high_temperature + '℃/' + forecast[i].low_temperature + '</div><div>';
                 week_forecast = week_forecast + forecast[i].cloud +  forecast[i].cloud_speed + '</div><div>';
-                week_forecast = week_forecast + '<span class="week-weather-info">72 良</span></div></div>';
+                week_forecast = week_forecast + '</div></div>';//<span class="week-weather-info">72 良</span>
                 week_forecast_T += week_forecast;
              }
             $(".week-weather").html(week_forecast_T);
