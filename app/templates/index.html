@@ -61,6 +61,17 @@
             {% endfor %}
         </div>
     </div>
+    <div class="row clearfix width-parent-70" style="background: rgba(0,0,0,0.75); margin-top: 10px;">
+        <div class="row clearfix">
+            <div class="col-md-2 col-sm-12 horizontal-text-center" style="text-align: center;">
+                <h2 style="font-size: 18px;color: #FFFFFF;font-weight: bold;">一周气温趋势</h2>
+            </div>
+            <div class="col-md-10 hidden-sm"></div>
+        </div>
+        <div class="clearfix week-weather-line">
+            <div id="forecast-chart" style="height: 250px; width: 100%;"></div>
+        </div>
+    </div>
     <div class="row clearfix width-parent-70" style="background: rgba(0,0,0,0.75);margin-top: 10px;">
         <div class="col-md-6 index-tab-item">
             <ul class="nav nav-tabs" role = "tablist">
@@ -208,4 +219,53 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block js %}
+<script>
+$(function(){
+    forecast_line();
+});
+function forecast_line(){
+    var date = new Array();
+    var high = new Array();
+    var low = new Array();
+    {% for fore in forecast %}
+        var day = "{{ fore.date }}";
+        date.push("{{ fore.date }}");
+        high.push(parseFloat("{{ fore.high_temperature }}"));
+        low.push(parseFloat("{{ fore.low_temperature }}"));
+    {% endfor %}
+    var chart = new CanvasJS.Chart("forecast-chart", {
+        backgroundColor: "rgba(0,0,0,0.75)",
+        fontColor: "red",
+        title:{
+        },
+        data: [{
+            type: "line",
+
+            dataPoints: [
+                { x: 1, y: low[0]   ,indexLabel:  low[0] + "℃", label: date[0]},
+                { x: 2, y: low[1], indexLabel:  low[1] + "℃", label: date[1] },
+                { x: 3, y: low[2], indexLabel:  low[2] + "℃", label: date[2] },
+                { x: 4, y: low[3] , indexLabel:  low[3] + "℃", label: date[3]},
+                { x: 5, y: low[4] , indexLabel:  low[4] + "℃", label: date[4]},
+                { x: 6, y: low[5], indexLabel:  low[5] + "℃", label: date[5] }
+            ]
+        }, {
+            type: "line",
+            dataPoints: [
+            { x: 1, y: high[0] , indexLabel:  high[0] + "℃",label: date[0]},
+            { x: 2, y: high[1], indexLabel:  high[1] + "℃", label: date[1] },
+            { x: 3, y: high[2], indexLabel:  high[2] + "℃", label: date[2] },
+            { x: 4, y: high[3] , indexLabel:  high[3] + "℃", label: date[3]},
+            { x: 5, y: high[4] , indexLabel:  high[4] + "℃", label: date[4]},
+            { x: 6, y: high[5], indexLabel:  high[5] + "℃", label: date[5] }
+            ]
+        }
+        ]
+    });
+    chart.render();
+}
+
+</script>
 {% endblock %}

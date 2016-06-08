@@ -432,17 +432,17 @@
 //        }]
 //    });
 //});
-//$(function(){
-//    try{
-//        var height = $("#real_windy_speed").height();
-//        console.log(height);
-//        $("#real_windy_speed").parent().height(height);
-//    }catch(exception){
-//
-//    }
-//
-//});
+$(function(){
+    try{
+        var height = $("#real_windy_speed").height();
+        console.log(height);
+        $("#real_windy_speed").parent().height(height);
+    }catch(exception){
 
+    }
+
+});
+//{% load js %}
 //index canvasjs
 $(function(){
     try{
@@ -499,7 +499,8 @@ function temperature(){
             { x: 90, y: 25.8,  label: "9月" },
             { x: 100, y: 19.1,  label: "10月" },
             { x: 110, y: 10.1,  label: "11月" },
-            { x: 120, y: 3.7,  label: "12月" }
+            { x: 120, y: 3.7,  label: "12月" },
+
             ]
         }]
     });

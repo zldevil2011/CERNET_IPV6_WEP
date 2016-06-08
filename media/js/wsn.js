@@ -107,6 +107,9 @@ function updateLocationFunction(){
             $(".today-detail").html(today_detail);
             $(".warning-value").html(real.pm25);
             var  week_forecast_T = '';
+            var date = new Array();
+            var high = new Array();
+            var low = new Array();
             for(var i = 0; i < 6; ++i){
                 week_forecast = '<div class="col-md-2"><div>';
                 week_forecast = week_forecast + forecast[i].date + '</div><div>';
@@ -116,8 +119,41 @@ function updateLocationFunction(){
                 week_forecast = week_forecast + forecast[i].cloud +  forecast[i].cloud_speed + '</div><div>';
                 week_forecast = week_forecast + '</div></div>';//<span class="week-weather-info">72 良</span>
                 week_forecast_T += week_forecast;
+                date.push(forecast[i].date);
+                high.push(forecast[i].high_temperature);
+                low.push(forecast[i].low_temperature);
              }
             $(".week-weather").html(week_forecast_T);
+
+            var chart = new CanvasJS.Chart("forecast-chart", {
+                backgroundColor: "rgba(0,0,0,0.75)",
+                title:{
+                },
+                data: [{
+                    type: "line",
+
+                    dataPoints: [
+                        { x: 1, y: low[0]   ,indexLabel:  low[0] + "℃", label: date[0]},
+                        { x: 2, y: low[1], indexLabel:  low[1] + "℃", label: date[1] },
+                        { x: 3, y: low[2], indexLabel:  low[2] + "℃", label: date[2] },
+                        { x: 4, y: low[3] , indexLabel:  low[3] + "℃", label: date[3]},
+                        { x: 5, y: low[4] , indexLabel:  low[4] + "℃", label: date[4]},
+                        { x: 6, y: low[5], indexLabel:  low[5] + "℃", label: date[5] }
+                    ]
+                }, {
+                    type: "line",
+                    dataPoints: [
+                    { x: 1, y: high[0] , indexLabel:  high[0] + "℃",label: date[0]},
+                    { x: 2, y: high[1], indexLabel:  high[1] + "℃", label: date[1] },
+                    { x: 3, y: high[2], indexLabel:  high[2] + "℃", label: date[2] },
+                    { x: 4, y: high[3] , indexLabel:  high[3] + "℃", label: date[3]},
+                    { x: 5, y: high[4] , indexLabel:  high[4] + "℃", label: date[4]},
+                    { x: 6, y: high[5], indexLabel:  high[5] + "℃", label: date[5] }
+                    ]
+                }
+                ]
+            });
+            chart.render();
             $('#place-choice').modal('hide');
         }else{
            window.location.href="/home/";
