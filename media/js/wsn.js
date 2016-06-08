@@ -86,7 +86,7 @@ function updateLocationFunction(){
     var location = $(this).html();
     console.log(location);
     $(this).addClass("div-text-active").siblings().removeClass("div-text-active");
-    var targetUrl = "/air/";
+    var targetUrl = "/city_all_info/";
     var formdata = new FormData();
     formdata.append("location", location);
     $.ajax({
@@ -98,12 +98,26 @@ function updateLocationFunction(){
         contentType:false,
     }).done(function(res){
         if(res != "error"){
-            console.log(res.location);
-            $("[name=latest_location]").html(res.location);
-            $(".today-degree").html(res.temperature + "℃");
-            var today_detail = res.weather + "&nbsp;&nbsp;|&nbsp;&nbsp;" + res.cloud + res.cloud_speed + "级&nbsp;&nbsp;|&nbsp;&nbsp;湿度：" + res.humidity + "%";
+            real = res[0];
+            forecast = res[1];
+            //console.log(real.location);
+            $("[name=latest_location]").html(real.location);
+            $(".today-degree").html(real.temperature + "℃");
+            var today_detail = real.weather + "&nbsp;&nbsp;|&nbsp;&nbsp;" + real.cloud + real.cloud_speed + "级&nbsp;&nbsp;|&nbsp;&nbsp;湿度：" + real.humidity + "%";
             $(".today-detail").html(today_detail);
-            $(".warning-value").html(res.pm25);
+            $(".warning-value").html(real.pm25);
+            var  week_forecast_T = '';
+            for(var i = 0; i < 6; ++i){
+                week_forecast = '<div class="col-md-2"><div>';
+                week_forecast = week_forecast + forecast[i].date + '</div><div>';
+                week_forecast = week_forecast + forecast[i].week + '</div><div>';
+                week_forecast = week_forecast + forecast[i].weather_day + '/' + forecast[i].weather_night + '</div><div>';
+                week_forecast = week_forecast + forecast[i].high_temperature + '℃/' + forecast[i].low_temperature + '</div><div>';
+                week_forecast = week_forecast + forecast[i].cloud +  forecast[i].cloud_speed + '</div><div>';
+                week_forecast = week_forecast + '<span class="week-weather-info">72 良</span></div></div>';
+                week_forecast_T += week_forecast;
+             }
+            $(".week-weather").html(week_forecast_T);
             $('#place-choice').modal('hide');
         }else{
            window.location.href="/home/";
