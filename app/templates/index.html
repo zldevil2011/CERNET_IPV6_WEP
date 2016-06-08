@@ -3,7 +3,11 @@
 {% block main_body %}
     <div class="row clearfix width-parent-70" style="background: rgba(6,135,147,0.5);">
         <div class="col-md-3 horizontal-center">
-            <h4 class="city_name">{{ latest.location }}</h4>
+            <h4 class="city_name"><span name="latest_location">{{ latest.location }}</span>&nbsp;
+                <a id="" href="#place-choice" role="button" class="glyphicon glyphicon-edit hander" data-toggle="modal"
+                style="font-size: 16px;color: #fff;text-decoration: none;"></a>
+            </h4>
+
             <p class="date-time-index">{{ latest.date }}</p>
             <p class="today-time" title="当前时间"></p>
         </div>
@@ -180,4 +184,28 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block small-window %}
+<div class="modal fade" id="place-choice" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    请选择城市
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="clearfix">
+                    {% for city in city_list %}
+                        <div class="horizontal-center col-md-2 img-rounded hander city-choice-item">{{ city }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="modal-footer">
+                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

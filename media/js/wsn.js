@@ -15,7 +15,7 @@ $("#service").on("click", function(){
 });
 //index js
 var nextTime = 15;
-console.log(nextTime);
+//console.log(nextTime);
 var font = 0;
 var time;
 
@@ -23,6 +23,7 @@ $(function(){
     try{
         setInterval('timeUpdate()', 1000);
         setInterval('imageUpdate()', 1000);
+        $(".city-choice-item").on("click", updateLocationFunction);
     }catch(exception){
 
     }
@@ -81,7 +82,36 @@ function imageUpdate(){
 	//console.log(nextURL);
     $("#nephogram").attr("src", nextURL);
 }
+function updateLocationFunction(){
+    var location = $(this).html();
+    console.log(location);
+    $(this).addClass("div-text-active").siblings().removeClass("div-text-active");
+    var targetUrl = "/air/";
+    var formdata = new FormData();
+    formdata.append("location", location);
+    $.ajax({
+        url:targetUrl,
+        data: formdata,
+        type: "POST",
+        cache: false,
+        processData:false,
+        contentType:false,
+    }).done(function(res){
+        if(res != "error"){
+            console.log(res.location);
+            $("[name=latest_location]").html(res.location);
+            $(".today-degree").html(res.temperature + "℃");
+            var today_detail = res.weather + "&nbsp;&nbsp;|&nbsp;&nbsp;" + res.cloud + res.cloud_speed + "级&nbsp;&nbsp;|&nbsp;&nbsp;湿度：" + res.humidity + "%";
+            $(".today-detail").html(today_detail);
+            $(".warning-value").html(res.pm25);
+            $('#place-choice').modal('hide');
+        }else{
+           window.location.href="/home/";
+        }
+    }).fail(function(res){
 
+    })
+}
 
 //data real-image
 var real_image_time = 15;
@@ -146,7 +176,7 @@ $(function(){
     }
 });
 function realSatelliteCloudImageUpdate(){
-    console.log("zzzz");
+    //console.log("zzzz");
     real_image_time = real_image_time + 30;
     if(real_image_time > 60){
         real_image_font = real_image_font + 1;

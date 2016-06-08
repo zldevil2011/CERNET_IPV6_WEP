@@ -11,6 +11,7 @@ import views.server.index
 urlpatterns = [
 	url('^$', views.server.index.index, name="index"),
 	url('^home/$', views.index.index, name="wsn_index"),
+	url('^air/$', views.index.location_air, name="location_air"),
 	url('^data/$', views.data.index, name="data_index"),
 	url('^dataInfo/(\d+)/$', views.data.dataInfo, name="dataInfo"),
 	url('^products/$', views.products.index, name="products_index"),
