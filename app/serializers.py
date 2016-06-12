@@ -1,5 +1,13 @@
 from django.contrib.auth.models import User, Group
+from app.models import AppUser
 from rest_framework import serializers
+
+
+class AppUserSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = AppUser
+		fidlds = ('id', 'sex', 'nickname', 'portrait', 'email', 'register_date', 'phone', 'location')
+
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
