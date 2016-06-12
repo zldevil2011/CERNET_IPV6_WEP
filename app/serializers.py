@@ -3,7 +3,7 @@ from app.models import AppUser
 from rest_framework import serializers
 
 
-class AppUserSerializer(serializers.HyperlinkedModelSerializer):
+class AppUserSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = AppUser
 		fidlds = ('id', 'sex', 'nickname', 'portrait', 'email', 'register_date', 'phone', 'location')
