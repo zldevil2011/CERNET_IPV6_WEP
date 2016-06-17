@@ -8,11 +8,19 @@ class AppUserSerializer(serializers.ModelSerializer):
 		model = AppUser
 		fidlds = ('id', 'sex', 'nickname', 'portrait', 'email', 'register_date', 'phone', 'location')
 
+
 class AirSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Air
 		fields = ('air_id', 'aqi', 'pm25', 'temperature', 'high_temperature', 'low_temperature', 'humidity', 'cloud',
 				  'cloud_speed', 'weather', 'location', 'date', 'time')
+
+
+class ForecastSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Forecast
+		fields = ('forecast_id', 'location', 'date', 'week', 'weather_day', 'weather_night', 'high_temperature',
+				  'low_temperature', 'cloud', 'cloud_speed', 'aqi', 'status')
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
