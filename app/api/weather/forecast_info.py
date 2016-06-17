@@ -21,10 +21,10 @@ class ForecastInfo(APIView):
     def get(self, request, format=None):
         location = request.GET.get('location', '北京')
         try:
-            item = Forecast.objects.get(location=location)
+            item = Forecast.objects.filter(location=location)
         except Forecast.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-        serializer = ForecastSerializer(item)
+        serializer = ForecastSerializer(item, many=True)
         return Response({'air':serializer.data}, status=status.HTTP_200_OK)
 
 
