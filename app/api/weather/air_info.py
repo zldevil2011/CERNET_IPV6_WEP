@@ -23,9 +23,6 @@ class AirInfo(APIView):
 
     def get(self, request, format=None):
         location = request.GET.get('location', '北京')
-        print "xxx"
-        print location
-        print "yyy"
         try:
             item = Air.objects.filter(location=location).order_by('-time')[0]
         except Air.DoesNotExist:
