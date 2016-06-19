@@ -11,12 +11,15 @@ from oauth2_provider.ext.rest_framework import TokenHasScope, OAuth2Authenticati
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from app.serializers import ForecastSerializer
 from app.models import Forecast
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 class ForecastInfo(APIView):
-    authentication_classes = [OAuth2Authentication, BasicAuthentication, SessionAuthentication,  ]
-    permission_classes = (Or(IsAuthenticated, TokenHasScope,  ),)
-    required_scopes = ['read', 'write']
+    # authentication_classes = [OAuth2Authentication, BasicAuthentication, SessionAuthentication,  ]
+    # permission_classes = (Or(IsAuthenticated, TokenHasScope,  ),)
+    # required_scopes = ['read', 'write']
 
     def get(self, request, format=None):
         location = request.GET.get('location', '北京')
