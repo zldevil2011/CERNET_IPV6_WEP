@@ -19,7 +19,7 @@ class AirInfo(APIView):
     # required_scopes = ['read', 'write']
 
     def get(self, request, format=None):
-        location = request.GET.get('location', '北京')
+        location = unicode(request.GET.get('location', '北京'))
         print "xxx"
         print location
         print "yyy"
