@@ -11,6 +11,9 @@ from oauth2_provider.ext.rest_framework import TokenHasScope, OAuth2Authenticati
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from app.serializers import AirSerializer
 from app.models import Air
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 class AirInfo(APIView):
