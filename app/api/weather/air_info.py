@@ -14,9 +14,9 @@ from app.models import Air
 
 
 class AirInfo(APIView):
-    authentication_classes = [OAuth2Authentication, BasicAuthentication, SessionAuthentication,  ]
-    permission_classes = (Or(IsAuthenticated, TokenHasScope,  ),)
-    required_scopes = ['read', 'write']
+    # authentication_classes = [OAuth2Authentication, BasicAuthentication, SessionAuthentication,  ]
+    # permission_classes = (Or(IsAuthenticated, TokenHasScope,  ),)
+    # required_scopes = ['read', 'write']
 
     def get(self, request, format=None):
         location = request.GET.get('location', '北京')
