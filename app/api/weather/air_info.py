@@ -24,7 +24,7 @@ class AirInfo(APIView):
     def get(self, request, format=None):
         location = request.GET.get('location', '北京')
         try:
-            item = Air.objects.filter(location=location).order_by('-time')[0]
+            item = Air.objects.filter(location=location).order_by('-date', '-time')[0]
         except Air.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
         serializer = AirSerializer(item)
