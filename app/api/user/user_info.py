@@ -10,7 +10,9 @@ from rest_framework.permissions import IsAuthenticated
 from oauth2_provider.ext.rest_framework import TokenHasScope, OAuth2Authentication
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from app.serializers import AppUserSerializer
-
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 class UserInfo(APIView):
     authentication_classes = [OAuth2Authentication, BasicAuthentication, SessionAuthentication,  ]
