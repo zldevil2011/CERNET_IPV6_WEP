@@ -29,7 +29,7 @@
                     <div class="collapse navbar-collapse" id="weatherMenu">
                         <ul class="nav navbar-nav">
                             <li>
-                                 <a href="#">今天是2016-05-16</a>
+                                 <a href="#">今天是<span name="date"></span></a>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -54,8 +54,8 @@
                     <div class = "col-md-offset-3 col-md-4 col-sm-8 padTB10 horizontal-center">
 					    <span style="font-size: 20px;">wireless network sensor</span>
 				    </div>
-                    <div class = "col-md-2 hidden-xs col-md-offset-2 padTB10">
-                        <span style="font-size: 20px;">北京 晴 30度</span>
+                    <div class = "col-md-3 hidden-xs col-md-offset-1 padTB10">
+                        <span style="font-size: 20px;">{{ latest.location }}&nbsp;&nbsp;{{ latest.weather }}&nbsp;&nbsp;{{ latest.temperature}}度</span>
                     </div>
                 </div>
 			</div>
@@ -161,6 +161,14 @@
 	<![endif]-->
 	<script type = "text/javascript" src = /web_media/js/painting.js></script>
 	<script type = "text/javascript" src = /web_media/js/wsn.js></script>
+    <script>
+        $(function(){
+            var date = $("[name=date]");
+            var myDate = new Date();
+            var today = myDate.getFullYear() + "年" + (parseInt(myDate.getMonth()) + 1) + "月" + myDate.getDate() + "日";
+            date.html(today);
+        });
+    </script>
 	{% block js %}
 	{% endblock %}
 </body>
