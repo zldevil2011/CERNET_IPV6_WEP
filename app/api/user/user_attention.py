@@ -38,6 +38,6 @@ class UserAttention(APIView):
     def post(self, request, format=None):
         user = request.user.appuser
         if request.data.get('location', None) != None:
-            user.location = user.location + request.data['location']
+            user.location = user.location + ";" + request.data['location']
         user.save()
         return Response(status=status.HTTP_200_OK)
