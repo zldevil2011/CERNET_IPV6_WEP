@@ -30,8 +30,8 @@ class UserAttention(APIView):
             dic_tmp["location"] = location
             air = Air.objects.filter(location=location).order_by('-date', '-time')[0]
             forecast = Forecast.objects.filter(location=location)
-            dic_tmp["air"] = AirSerializer(air)
-            dic_tmp["forecast"] = ForecastSerializer(forecast, many=True)
+            dic_tmp["air"] = AirSerializer(air).data
+            dic_tmp["forecast"] = ForecastSerializer(forecast, many=True).data
             attention_info_list.append(dic_tmp)
         return Response({'attention_info_list': attention_info_list}, status=status.HTTP_200_OK)
 
