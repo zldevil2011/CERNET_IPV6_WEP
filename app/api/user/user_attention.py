@@ -28,8 +28,8 @@ class UserAttention(APIView):
         for location in attention_location_list:
             dic_tmp = {}
             dic_tmp["location"] = location
-            air = Air.objects.get(location=location)
-            forecast = Forecast.objects.get(location=location)
+            air = Air.objects.filter(location=location).order_by('-date', '-time')[0]
+            forecast = Forecast.objects.filter(location=location)
             dic_tmp["air"] = air
             dic_tmp["forecast"] = forecast
             attention_info_list.append(dic_tmp)
