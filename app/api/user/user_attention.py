@@ -9,7 +9,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from oauth2_provider.ext.rest_framework import TokenHasScope, OAuth2Authentication
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-from app.serializers import AppUserSerializer
+from app.serializers import AppUserSerializer, AirSerializer, ForecastSerializer
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -30,8 +30,8 @@ class UserAttention(APIView):
             dic_tmp["location"] = location
             air = Air.objects.filter(location=location).order_by('-date', '-time')[0]
             forecast = Forecast.objects.filter(location=location)
-            dic_tmp["air"] = air
-            dic_tmp["forecast"] = forecast
+            dic_tmp["air"] = AirSerializer(air)
+            dic_tmp["forecast"] = ForecastSerializer(forecast, many=True)
             attention_info_list.append(dic_tmp)
         return Response({'attention_info_list': attention_info_list}, status=status.HTTP_200_OK)
 
