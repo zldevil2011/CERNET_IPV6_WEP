@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'wireless',
 		'USER': 'wsn',
 		'PASSWORD':'wsn3037',
-		'HOST': 'localhost',
+		'HOST': '139.129.25.49',
 		'PORT': '3306',
 		#'OPTIONS': {'charset': 'utf8mb4'},
     }

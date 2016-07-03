@@ -3,6 +3,7 @@ from django.conf.urls import url, include
 from app.api.register import SendMail, CheckCode, Register
 from app.api.user.login import Login
 from app.api.user.user_info import UserInfo
+from app.api.user.user_attention import UserAttention
 from app.api.weather.air_info import AirInfo
 from app.api.weather.forecast_info import ForecastInfo
 #router = routers.DefaultRouter()
@@ -18,6 +19,8 @@ urlpatterns = [
 	url(r'^register/', Register.as_view()),
 	url(r'^login/', Login.as_view()),
 	url(r'^user_info/', UserInfo.as_view()),
+	url(r'^user_attention/', UserAttention.as_view()),
+	
 	url(r'^air_info/', AirInfo.as_view()),
 	url(r'^forecast_info/', ForecastInfo.as_view()),
 	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
