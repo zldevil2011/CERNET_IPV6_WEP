@@ -30,10 +30,8 @@ class UserInfo(APIView):
             user.nickname = request.data['nickname']
         if request.data.get('phone', None) != None:
             user.phone = request.data['phone']
-        if request.data.get('gender', None) != None:
-            user.gender = request.data['gender']
-        if request.data.get('age', None) != None:
-            user.age = request.data['age']
+        if request.data.get('sex', None) != None:
+            user.gender = request.data['sex']
         if request.data.get('location', None) != None:
             user.location = request.data['location']
         user.save()
