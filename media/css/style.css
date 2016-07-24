@@ -103,6 +103,7 @@ body{
 	width:70%;
 	margin:0 auto;
 	background:#FFFFFF;
+	min-height: 500px;
 	/*background: #408AA7;*/
 }
 .city_name {
