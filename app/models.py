@@ -80,11 +80,13 @@ class Nephogram(models.Model):
 		return str(self.nephogram_id)
 
 
+from DjangoUeditor.models import UEditorField
 # news
 class News(models.Model):
 	news_id = models.AutoField(primary_key = True)
 	title = models.CharField(max_length=200, null = True)
-	content = models.TextField(null = True)
+	content = UEditorField(u'内容   ',width=600, height=300, toolbars="full", imagePath="images/%(basename)s_%(datetime)s.%(extname)s",
+						   filePath="images/",upload_settings={"imageMaxSize":1204000},settings={},command=None,blank=True)
 	author = models.CharField(max_length = 200, null = True)
 	time = models.DateTimeField(auto_now_add = True)
 	read_count = models.IntegerField(default = 0, null = True)

@@ -18,8 +18,10 @@ from django.contrib import admin
 import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+	url(r'^ueditor/',include('DjangoUeditor.urls' )),
 	url(r'',include('app.urls')),
 	url(r'^api/',include('app.api_urls')),
+	url(r'^adminxl/',include('app.admin_urls')),
 	url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 	url(r'^web_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_PATH}),
 	#url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))

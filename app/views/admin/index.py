@@ -1,0 +1,24 @@
+# -*- coding:utf-8 -*-
+from django.shortcuts import render, render_to_response
+from django.http import HttpResponse
+from app.models import News
+
+from app.forms import UEditorTestModelForm
+
+def index(request):
+	if request.method == "POST":
+		return HttpResponse("success")
+	else:
+		try:
+			M=News.objects.get(pk=1)
+			form = UEditorTestModelForm(instance= M)
+		except:
+			form = UEditorTestModelForm(
+				initial={'content': '测试富文本编辑器'}
+			)
+		# print "1234"
+		# print form
+		# return render_to_response('test.html', {'form': form})
+		return render(request, "adminer/index.html", {'form': form})
+
+# Create your views here.

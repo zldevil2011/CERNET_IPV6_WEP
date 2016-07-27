@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 	'app',
 	'rest_framework',
 	'oauth2_provider',
+    'DjangoUeditor',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -91,7 +92,7 @@ DATABASES = {
         'NAME': 'wireless',
 		'USER': 'wsn',
 		'PASSWORD':'wsn3037',
-		'HOST': '139.129.25.49',
+		'HOST': 'localhost',
 		'PORT': '3306',
 		#'OPTIONS': {'charset': 'utf8mb4'},
     }
