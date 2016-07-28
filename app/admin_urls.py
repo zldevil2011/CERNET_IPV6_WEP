@@ -3,8 +3,10 @@ from django.conf.urls import url, patterns, include
 from django.views.generic import TemplateView
 import views.admin.index
 import views.admin.news
+import views.admin.data
 
 urlpatterns = [
-	url('^', views.admin.index.index, name="admin_index"),
-	url('^editNews$', views.admin.news.edit, name="editNews"),
+	url('^/', views.admin.index.index, name="admin_index"),
+	url('^data/$', views.admin.data.index, name="admin_data"),
+	url('^editNews/$', views.admin.news.edit, name="editNews"),
 ]
