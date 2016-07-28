@@ -6,11 +6,11 @@ from models import News
 
 
 class TestUEditorForm(forms.Form):
-    title = forms.CharField(label=u'标题')
-    content = UEditorField(label=u"内容",widget=UEditorWidget({"width":600, "height":100, "imagePath":'aa', "filePath":'bb', "toolbars":"full"}))
-    author = forms.CharField()
-    time = forms.DateTimeField()
-    read_count = forms.IntegerField()
+    # title = forms.CharField(label=u'标题')
+    content = UEditorField(label=u"内容",widget=UEditorWidget({"width":100, "height":100, "imagePath":'aa', "filePath":'bb', "toolbars":"full"}))
+    # author = forms.CharField()
+    # time = forms.DateTimeField()
+    # read_count = forms.IntegerField()
 
 
 class UEditorTestModelForm(UEditorModelForm):
