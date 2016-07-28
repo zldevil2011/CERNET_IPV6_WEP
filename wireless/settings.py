@@ -90,8 +90,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'wireless',
-		'USER': 'wsn',
-		'PASSWORD':'wsn3037',
+		'USER': 'root',
+		'PASSWORD':'root',
 		'HOST': 'localhost',
 		'PORT': '3306',
 		#'OPTIONS': {'charset': 'utf8mb4'},
