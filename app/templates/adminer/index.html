@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    {{ form.media }}
-    <link rel="stylesheet" type="text/css"  href = "/web_media/css/bootstrap.min.css">
-    <link href="/web_media/css/style.css" type="text/css" rel="stylesheet">
-</head>
-<body style="color: white;">
+{% extends 'adminer/adminer_base.html' %}
+{% block title %}
+    文章编辑
+{% endblock %}
+{% block main-body %}
     <div style="display: none">{{ form.as_table }}</div>
     <div class="container">
         <div class="row clearfix">
@@ -121,39 +116,8 @@
             </div>
         </div>
     </div>
-
-    <div class = "footer">
-		<section class = "footer_up">
-			<h2>友情链接</h2>
-			<p>
-				<a href="http://www.nmc.gov.cn/" target="_blank" rel="nofollow">中央气象台</a>
-	             |<a href="http://www.weather.com/" target="_blank" rel="nofollow">美国气象频道</a>
-	             |<a href="http://www.weather.com.cn/" target="_blank" rel="nofollow">中国天气网</a>
-	             |<a href="http://www.pm25.com/" target="_blank" rel="nofollow">绿色呼吸</a>
-	             |<a href="http://www.feeyo.com/" target="_blank" rel="nofollow">飞友网</a>
-	             |<a href="http://i.firefoxchina.cn/?www.firefoxchina.cn" target="_blank" rel="nofollow">火狐浏览器</a>
-	             |<a href="http://tianqitong.sina.cn/" target="_blank" rel="nofollow">天气通</a>
-	             |<a href="http://weather.mipang.com" target="_blank" rel="nofollow">米胖天气</a>
-	             |<a href="http://www.xn121.com/" target="_blank" rel="nofollow">兴农网</a>
-	             |<a href="http://www.mlogcn.com/" target="_blank" rel="nofollow">象辑科技</a>
-	             |<a href="http://www.tianqi.com/" target="_blank" rel="nofollow">天气网</a>
-			</p>
-		</section>
-		<section class = "footer_down">
-			<p>关于我们|联系我们|批评建议</p>
-			<p>Copyright © 2016-2016 BNU, All Rights Reserved</p>
-			<p>北京师范大学 版权所有</p>
-		</section>
-	</div>
-
-
-    <script type = "text/javascript" src = "/web_media/js/jquery-2.2.1.min.js"></script>
-	<script type = "text/javascript" src = "/web_media/js/bootstrap.min.js"></script>
-	<!--[if lt IE 9]>
-  		<script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
-  		<script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
+{% endblock %}
+{% block special_js %}
     <script type="text/javascript">
         $(function(){
             var w = $("#father").width();
@@ -164,5 +128,4 @@
             });
         });
     </script>
-</body>
-</html>
+{% endblock %}
