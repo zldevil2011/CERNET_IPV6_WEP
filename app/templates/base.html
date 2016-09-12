@@ -167,6 +167,12 @@
             var myDate = new Date();
             var today = myDate.getFullYear() + "年" + (parseInt(myDate.getMonth()) + 1) + "月" + myDate.getDate() + "日";
             date.html(today);
+
+            var bglist = ['Cloud','Cloud2','Evening','Night','Rain','Sand','Snow','Sunny','Thunder'];
+            var random = Math.round(Math.random() * 8);
+            var bgUrl = "url(/web_media/images/" + bglist[random] + ".jpg)";
+            console.log(bgUrl);
+            $("body").eq(0).css("background-image", bgUrl);
         });
     </script>
 	{% block js %}

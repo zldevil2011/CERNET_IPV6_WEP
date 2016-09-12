@@ -1,10 +1,11 @@
 body{
 	font: 14px/1.6 "Microsoft Yahei","Tahoma","SimSun";
 	/*background-image:url(/web_media/images/blue_sky2.png);*/
-	background-image:url(http://i0.sinaimg.cn/dy/weather/main/index14/007/bg_body/night/bg_01.jpg;);
+	/*background-image:url(http://i0.sinaimg.cn/dy/weather/main/index14/007/bg_body/night/bg_01.jpg;);*/
 	/*background-size:cover;
 	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/web_media/images/blue_sky.png',  sizingMethod='scale')
 	*/
+	background-repeat:no-repeat;background-size:100% 100%;background-attachment: fixed;
 }
 .vertical-table-cell-middle{
 	 display: table-cell;
