@@ -85,7 +85,7 @@ from DjangoUeditor.models import UEditorField
 class News(models.Model):
 	news_id = models.AutoField(primary_key = True)
 	title = models.CharField(max_length=200, null = True)
-	content = UEditorField(u'内容   ',width=600, height=300, toolbars="full", imagePath="images/%(basename)s_%(datetime)s.%(extname)s",
+	content = UEditorField(u'内容   ',width=600, height=300, toolbars="full", imagePath="images/itemImages/%(basename)s_%(datetime)s.%(extname)s",
 						   filePath="images/",upload_settings={"imageMaxSize":1204000},settings={},command=None,blank=True)
 	author = models.CharField(max_length = 200, null = True)
 	time = models.DateTimeField(auto_now_add = True)

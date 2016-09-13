@@ -14,9 +14,10 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_PATH = './media'
+STATIC_PATH = './media/'
 STATIC_ROOT = './static/'
 MEDIA_ROOT = './media/'
+MEDIA_URL = '/web_media/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -91,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'wireless',
 		'USER': 'wsn',
-		'PASSWORD':'wsn3037',
+		'PASSWORD':'wsn@3037',
 		'HOST': 'localhost',
 		'PORT': '3306',
 		#'OPTIONS': {'charset': 'utf8mb4'},

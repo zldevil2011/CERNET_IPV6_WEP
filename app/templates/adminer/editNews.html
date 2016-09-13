@@ -48,11 +48,13 @@
 {% block special_js %}
     <script type="text/javascript">
         $(function(){
+            var content = "{{ content }}";
             var w = $("#father").width();
             console.log(w);
-            var id_content = UE.getEditor('id_content1',{'initialFrameWidth': w, 'initialFrameHeight': 300, 'serverUrl': '/ueditor/controller/?imagePathFormat=&filePathFormat='});
-            id_content.ready(function(){
+            var id_content = UE.getEditor('id_content1',{'initialFrameWidth': w, 'initialFrameHeight': 300, 'serverUrl': '/ueditor/controller/?imagePathFormat=ItemMaterial/&filePathFormat=ItemMaterial/'});
 
+            id_content.ready(function(){
+                id_content.setContent(content);
             });
         });
     </script>
