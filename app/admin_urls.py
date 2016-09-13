@@ -8,5 +8,5 @@ import views.admin.data
 urlpatterns = [
 	url('^/', views.admin.index.index, name="admin_index"),
 	url('^data/$', views.admin.data.index, name="admin_data"),
-	url('^editNews/$', views.admin.news.edit, name="editNews"),
+	url('^news/edit/$', views.admin.news.edit, name="editNews"),
 ]

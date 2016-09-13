@@ -12,11 +12,11 @@
                         <tr>
                             <td>
                                 文章标题<hr>
-                                <select class="btn label-default" style="width: 9%;">
-                                    <option>原创</option>
-                                    <option>转载</option>
+                                <select name = "newsType" class="btn label-default" style="width: 9%;">
+                                    <option value="original">原创</option>
+                                    <option value="reprint">转载</option>
                                 </select>
-                                <input type="text" class="form-control" style="width:90%;display: inline;">
+                                <input name = "newsTitle" type="text" class="form-control" style="width:90%;display: inline;">
                             </td>
                         </tr>
                         <tr>
@@ -28,7 +28,7 @@
                         <tr>
                             <td>
                                 摘要<hr>
-                                <textarea style="width: 100%; border-radius: 6px;" rows="5"></textarea>
+                                <textarea name="abstract" style="width: 100%; border-radius: 6px;" rows="5"></textarea>
                             </td>
                         </tr>
                     </table>
@@ -36,7 +36,7 @@
             </div>
             <div class="col-md-12" style="margin-top: 10px;">
                 <div class="col-md-offset-5 col-md-1 col-sm-6">
-                    <button class="btn btn-success">立即发表</button>
+                    <button name = "save" class="btn btn-success">立即发表</button>
                 </div>
                 <div class="col-md-1 col-sm-6">
                     <button class="btn btn-danger">放弃发表</button>
@@ -46,6 +46,46 @@
     </div>
 {% endblock %}
 {% block special_js %}
+    <script>
+        $("[name=save]").on("click", function(){
+            var id_content = UE.getEditor('id_content1');
+            console.log('xxx');
+            var title = $("[name=newsTitle]").val();
+            var content = id_content.getContent();
+            var abstract = $("[name=abstract]").val();
+
+            if(title == ""){
+                alert("请填写标题");
+                return;
+            }
+            if(content == ""){
+                alert("请填写内容");
+                return;
+            }
+            console.log(title);
+            console.log(content);
+            console.log(abstract);
+            var formdata = new FormData();
+            formdata.append("title", title);
+            formdata.append("content", content);
+            formdata.append("abstract", abstract);
+            $.ajax({
+                url: '/adminxl/news/edit/',
+                type : "POST",
+                cache : false,
+                data : formdata,
+                processData : false,
+                contentType : false
+            }).done(function(res){
+                if(res == "success"){
+                    alert("保存成功");
+                    window.location.href = "/adminxl/data/";
+                }
+            }).fail(function(res){
+                alert("请稍后再试");
+            });
+        });
+    </script>
     <script type="text/javascript">
         $(function(){
             var content = "{{ content }}";
