@@ -1,0 +1,47 @@
+{% extends 'adminer/adminer_base.html' %}
+{% block title %}
+    文章编辑
+{% endblock %}
+{% block main-body %}
+{#    <div style="display: none">{{ form.as_table }}</div>#}
+    <div class="container" style="min-height: 500px;">
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="horizontal-center-block"  style="width: 100%;">
+                    <table class="table table table-hover horizontal-center-block">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>标题</th>
+                                <th>时间</th>
+                                <th>作者</th>
+                                <th>阅读量</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for news in news_list %}
+                                <tr onclick="window.location.href='/adminxl/news/' + {{ news.news_id }}" class="hander">
+                                    <td>{{ news.news_id }}</td>
+                                    <td>{{ news.title }}</td>
+                                    <td>{{ news.time }}</td>
+                                    <td>{{ news.author }}</td>
+                                    <td>{{ news.read_count }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-12" style="margin-top: 10px;">
+                <div class="col-md-offset-6 col-md-6 col-sm-12 text-right" >
+                    <button name = "save" class="btn btn-success" style="width: 30%;" onclick="window.location.href='/adminxl/news/edit/'">新建</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block special_js %}
+    <script>
+    </script>
+{% endblock %}

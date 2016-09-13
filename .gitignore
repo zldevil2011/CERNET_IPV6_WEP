@@ -64,4 +64,5 @@ db.sqlite3
 
 media/images/originalImage/*
 media/images/processImage/*
+media/ItemMaterial/*
 wireless/settings.py

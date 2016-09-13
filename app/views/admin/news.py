@@ -7,6 +7,13 @@ from django.views.decorators.csrf import csrf_exempt
 from app.forms import UEditorTestModelForm,TestUEditorForm
 
 
+def list(request):
+	news_list = News.objects.all().order_by('-time')
+	return render(request, "adminer/newsList.html", {
+		"news_list": news_list,
+	})
+
+
 @csrf_exempt
 def edit(request):
 	print request.method

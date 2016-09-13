@@ -9,6 +9,7 @@ urlpatterns = [
 	url('^$', views.admin.index.index, name="admin_index"),
 	url('^index/$', views.admin.index.index, name="admin_index"),
 	url('^data/$', views.admin.data.index, name="admin_data"),
+	url('^news/list/$', views.admin.news.list, name="newlist"),
 	url('^news/edit/$', views.admin.news.edit, name="editNews"),
 	url('^news/(?P<news_id>\d+)/$', views.admin.news.read, name="readNews"),
 ]
