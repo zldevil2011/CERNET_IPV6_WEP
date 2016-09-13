@@ -9,6 +9,7 @@ from app.forms import UEditorTestModelForm,TestUEditorForm
 
 @csrf_exempt
 def edit(request):
+	print request.method
 	if request.method == "POST":
 		title = request.POST.get("title", None)
 		content = request.POST.get("content", None)
@@ -16,31 +17,59 @@ def edit(request):
 		print content
 		if title is None or content is None:
 			return HttpResponse("error")
-		print "yyyy"
-		news = News()
-		news.title = title
-		news.content = content
-		news.author = "zhaolong"
-		news.read_count = 0
-		news.save()
-		print "xxxx"
-		return HttpResponse("success")
-	else:
 		try:
-			M=News.objects.get(pk=-1)
-			form = UEditorTestModelForm(instance= M)
+			news_id = request.POST.get("news_id", None)
+			print "xx" + news_id + "yy"
+			if news_id is None or news_id == "":
+				print news_id
+				news = News()
+				news.title = title
+				news.content = content
+				news.author = "zhaolong"
+				news.read_count = 0
+				news.save()
+			else:
+				news = News.objects.get(news_id=int(news_id))
+				news.title = title
+				news.content = content
+				news.author = "zhaolong"
+				news.save()
+			return HttpResponse("success")
+		except:
+			return HttpResponse("error")
+
+	elif request.method == "GET":
+		try:
+			news_id = int(request.GET.get("nid", -1))
+			news=News.objects.get(pk=news_id)
+			form = UEditorTestModelForm(instance= news)
 		except Exception, e:
 			print str(e)
-			form = TestUEditorForm(
-				initial={'content': '请在此输入文字'}
-			)
-		# print "1234"
-		# print form
-		# return render_to_response('test.html', {'form': form})
-
+			form = TestUEditorForm( initial={'content': '请在此输入文字'} )
+			news = None
 		return render(request, "adminer/editNews.html", {
 			'form': form,
-			# 'content': M.content,
+			'news': news,
 		})
+	else:
+		return HttpResponse("success")
 
+
+def read(request, news_id):
+	news_id = int(news_id)
+	print news_id
+	print type(news_id)
+	if request.method == "POST":
+		return HttpResponse("POST")
+	else:
+		try:
+			news = News.objects.get(news_id=news_id)
+			news.read_count += 1
+			news.save()
+		except News.DoesNotExist:
+			return HttpResponse("不存在")
+
+		return render(request, "adminer/news.html", {
+			"news": news,
+		})
 # Create your views here.

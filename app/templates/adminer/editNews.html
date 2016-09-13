@@ -3,7 +3,7 @@
     文章编辑
 {% endblock %}
 {% block main-body %}
-    <div style="display: none">{{ form.as_table }}</div>
+{#    <div style="display: none">{{ form.as_table }}</div>#}
     <div class="container">
         <div class="row clearfix">
             <div class="col-md-12">
@@ -16,7 +16,7 @@
                                     <option value="original">原创</option>
                                     <option value="reprint">转载</option>
                                 </select>
-                                <input name = "newsTitle" type="text" class="form-control" style="width:90%;display: inline;">
+                                <input name = "newsTitle" type="text" class="form-control" style="width:90%;display: inline;" value="{{ news.title }}">
                             </td>
                         </tr>
                         <tr>
@@ -28,7 +28,9 @@
                         <tr>
                             <td>
                                 摘要<hr>
-                                <textarea name="abstract" style="width: 100%; border-radius: 6px;" rows="5"></textarea>
+                                <textarea name="abstract" style="width: 100%; border-radius: 6px;" rows="5">
+                                    {{ news.author }}
+                                </textarea>
                             </td>
                         </tr>
                     </table>
@@ -44,12 +46,12 @@
             </div>
         </div>
     </div>
+    <div name="news_id" style="display:none;">{{ news.news_id }}</div>
 {% endblock %}
 {% block special_js %}
     <script>
         $("[name=save]").on("click", function(){
             var id_content = UE.getEditor('id_content1');
-            console.log('xxx');
             var title = $("[name=newsTitle]").val();
             var content = id_content.getContent();
             var abstract = $("[name=abstract]").val();
@@ -62,13 +64,14 @@
                 alert("请填写内容");
                 return;
             }
-            console.log(title);
-            console.log(content);
-            console.log(abstract);
+            var news_id = $("[name=news_id]").html();
+            console.log(news_id);
+
             var formdata = new FormData();
             formdata.append("title", title);
             formdata.append("content", content);
             formdata.append("abstract", abstract);
+            formdata.append("news_id", news_id);
             $.ajax({
                 url: '/adminxl/news/edit/',
                 type : "POST",
@@ -84,15 +87,15 @@
             }).fail(function(res){
                 alert("请稍后再试");
             });
+
         });
     </script>
     <script type="text/javascript">
         $(function(){
-            var content = "{{ content }}";
+            var content = '{{ news.content | safe }}';
             var w = $("#father").width();
             console.log(w);
             var id_content = UE.getEditor('id_content1',{'initialFrameWidth': w, 'initialFrameHeight': 300, 'serverUrl': '/ueditor/controller/?imagePathFormat=ItemMaterial/&filePathFormat=ItemMaterial/'});
-
             id_content.ready(function(){
                 id_content.setContent(content);
             });

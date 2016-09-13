@@ -1,0 +1,42 @@
+{% extends 'adminer/adminer_base.html' %}
+{% block title %}
+    文章编辑
+{% endblock %}
+{% block main-body %}
+{#    <div style="display: none">{{ form.as_table }}</div>#}
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="horizontal-center-block"  style="width: 100%;">
+                    <table class="table table-bordered horizontal-center-block">
+                        <tr>
+                            <td style="text-align: center;">
+                                <h4>{{ news.title }}</h4>
+                                <hr>
+                                <div style="text-align: right;">
+                                    <small>阅读次数: {{ news.read_count }}</small>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="father">
+                                文章内容<hr>
+                                {{ news.content | safe }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                摘要<hr>
+                                {{ news.author }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block special_js %}
+    <script>
+    </script>
+{% endblock %}
