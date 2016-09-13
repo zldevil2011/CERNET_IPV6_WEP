@@ -20,30 +20,49 @@ def edit(request):
 	if request.method == "POST":
 		title = request.POST.get("title", None)
 		content = request.POST.get("content", None)
+		news_id = request.POST.get("news_id", None)
+		delete_tag = request.POST.get("delete_tag", None)
 		print title
 		print content
-		if title is None or content is None:
-			return HttpResponse("error")
-		try:
-			news_id = request.POST.get("news_id", None)
-			print "xx" + news_id + "yy"
+		print news_id
+		print delete_tag
+		if delete_tag is None:
+			if title is None or content is None:
+				return HttpResponse("error")
+			# 新建news
 			if news_id is None or news_id == "":
 				print news_id
-				news = News()
-				news.title = title
-				news.content = content
-				news.author = "zhaolong"
-				news.read_count = 0
-				news.save()
+				try:
+					news = News()
+					news.title = title
+					news.content = content
+					news.author = "zhaolong"
+					news.read_count = 0
+					news.save()
+					return HttpResponse("success")
+				except:
+					return HttpResponse("error")
+			# 更新news 内容
 			else:
+				try:
+					news = News.objects.get(news_id=int(news_id))
+					news.title = title
+					news.content = content
+					news.author = "zhaolong"
+					news.save()
+					return HttpResponse("success")
+				except:
+					return HttpResponse("error")
+		# 删除news
+		else:
+			if news_id is None:
+				return HttpResponse("error")
+			try:
 				news = News.objects.get(news_id=int(news_id))
-				news.title = title
-				news.content = content
-				news.author = "zhaolong"
-				news.save()
-			return HttpResponse("success")
-		except:
-			return HttpResponse("error")
+				news.delete()
+				return HttpResponse("success")
+			except:
+				return HttpResponse("error")
 
 	elif request.method == "GET":
 		try:

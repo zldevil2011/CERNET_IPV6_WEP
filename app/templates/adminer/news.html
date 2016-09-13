@@ -33,10 +33,41 @@
                     </table>
                 </div>
             </div>
+            <div class="col-md-12" style="margin-top: 10px;">
+                <div class="col-md-offset-6 col-md-3 col-sm-6 text-right" >
+                    <button name = "save" class="btn btn-success" style="width: 100%;" onclick="window.location.href='/adminxl/news/edit?nid={{ news.news_id }}'">编辑</button>
+                </div>
+                <div class="col-md-3 col-sm-6 text-right" >
+                    <button name = "save" class="btn btn-danger" style="width: 100%;" onclick="deleteNews();">删除</button>
+                </div>
+            </div>
+            <div name="news_id" style="display: none;">{{ news.news_id }}</div>
         </div>
     </div>
 {% endblock %}
 {% block special_js %}
     <script>
+        function deleteNews(){
+            var news_id = $("[name=news_id]").html();
+            var formdata = new FormData();
+            formdata.append("delete_tag", "true");
+            formdata.append("news_id", news_id);
+            $.ajax({
+                url: '/adminxl/news/edit/',
+                type : "POST",
+                cache : false,
+                data : formdata,
+                processData : false,
+                contentType : false
+            }).done(function(res){
+                if(res == "success"){
+                    window.location.href = "/adminxl/news/list/";
+                }else{
+                    alert("请稍后再试");
+                }
+            }).fail(function(res){
+                alert("请稍后再试");
+            })
+        }
     </script>
 {% endblock %}
