@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include, patterns
 from django.contrib import admin
 import settings
+import video
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 	url(r'^ueditor/',include('DjangoUeditor.urls' )),
@@ -24,6 +25,7 @@ urlpatterns = [
 	url(r'^adminxl/',include('app.admin_urls')),
 	url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 	url(r'^web_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_PATH}),
+	url(r'^video/', video.video)
 	#url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 	
 ]
