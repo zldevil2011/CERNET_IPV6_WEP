@@ -12,20 +12,26 @@ import json
 weekArr = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六","星期天"]
 @cache_page(15*60)
 def index(request):
-	location='北京'
-	latest = Air.objects.filter(location=location).order_by('-date', '-time')[0]
-	all_city_air = Air.objects.all()[0:33]
-	city_list = []
-	for city in all_city_air:
-		city_list.append(city.location)
+	try:
+		location='北京'
+		latest = Air.objects.filter(location=location).order_by('-date', '-time')[0]
+		all_city_air = Air.objects.all()
+		city_list = []
+		for city in all_city_air:
+			city_list.append(city.location)
 
-	today = datetime.date.today()
-	week = weekArr[today.weekday()]
-	print latest
-	forecast = Forecast.objects.filter(location=location).order_by('date')[0:6]
-	print forecast
-	for fore in forecast:
-		fore.week = weekArr[int(fore.week)]
+		today = datetime.date.today()
+		week = weekArr[today.weekday()]
+		print latest
+		forecast = Forecast.objects.filter(location=location).order_by('date')[0:6]
+		print forecast
+		for fore in forecast:
+			fore.week = weekArr[int(fore.week)]
+	except:
+		latest = None
+		week = None
+		forecast = None
+		city_list = None
 	return render(request, "index.html", {
 		"latest": latest,
 		"week": week,
