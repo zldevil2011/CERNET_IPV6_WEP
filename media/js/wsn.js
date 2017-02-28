@@ -77,7 +77,7 @@ function imageUpdate(){
 	var monthDay = String(month) + String(day);
 
 	//console.log(monthDay);
-    var nextURL = "http://image.nmc.cn/product/2016/"+month + "/" + day + "/WXCL/small/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_2016" + monthDay + nextNum + "00000.JPG";
+    var nextURL = "http://image.nmc.cn/product/2017/"+month + "/" + day + "/WXCL/small/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_2017" + monthDay + nextNum + "00000.JPG";
 
 	//console.log(nextURL);
     $("#nephogram").attr("src", nextURL);
