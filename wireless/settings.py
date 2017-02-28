@@ -92,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'wireless',
 		'USER': 'wsn',
-		'PASSWORD':'wsn@3037',
+		'PASSWORD':'wsn3037',
 		'HOST': 'localhost',
 		'PORT': '3306',
 		#'OPTIONS': {'charset': 'utf8mb4'},

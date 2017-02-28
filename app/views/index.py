@@ -14,7 +14,7 @@ weekArr = ["星期一", "星期二", "星期三", "星期四", "星期五", "星
 def index(request):
 	location='北京'
 	latest = Air.objects.filter(location=location).order_by('-date', '-time')[0]
-	all_city_air = Air.objects.all()
+	all_city_air = Air.objects.all()[0:33]
 	city_list = []
 	for city in all_city_air:
 		city_list.append(city.location)
