@@ -2,34 +2,34 @@ from django.shortcuts import render
 import sys
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-import time
+# import time
 # import Image
-from PIL import Image
 
 def handle_uploaded_file(f):
-    try:
-        # pass
-        with open('./media/images/originalImage/' + unicode(f), 'wb+') as destination:
-            for chunk in f.chunks():
-                destination.write(chunk)
-    except Exception, e:
-        print str(e)
+	try:
+		# pass
+		with open('./media/images/originalImage/' + unicode(f), 'wb+') as destination:
+			for chunk in f.chunks():
+				destination.write(chunk)
+	except Exception, e:
+		print str(e)
 
 
 def imageProcessing(filename, postfix):
-	path = "./media/images/originalImage/" + filename + "." + postfix
-	im = Image.open(path)
-	pix = im.load()
-	width = im.size[0]
-	height = im.size[1]
-	for i in range(width):
-		for j in range(height):
-			t = (float)(pix[i,j][1] - pix[i,j][0]) / (float)(pix[i,j][1] + pix[i,j][0])
-			if t > 0.03 or (pix[i,j][0] > 250 and pix[i,j][1] >250 and pix[i,j][2] >250):
-				pix[i,j] = (255,255,255)
-			else:
-				pix[i,j] = (0,0,0)
-	im.save("./media/images/processImage/" + filename + ".jpg")
+	pass
+	# path = "./media/images/originalImage/" + filename + "." + postfix
+	# im = Image.open(path)
+	# pix = im.load()
+	# width = im.size[0]
+	# height = im.size[1]
+	# for i in range(width):
+	# 	for j in range(height):
+	# 		t = (float)(pix[i,j][1] - pix[i,j][0]) / (float)(pix[i,j][1] + pix[i,j][0])
+	# 		if t > 0.03 or (pix[i,j][0] > 250 and pix[i,j][1] >250 and pix[i,j][2] >250):
+	# 			pix[i,j] = (255,255,255)
+	# 		else:
+	# 			pix[i,j] = (0,0,0)
+	# im.save("./media/images/processImage/" + filename + ".jpg")
 
 
 def index(request):

@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'wireless.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'wireless',
+        'NAME': 'CERNET_IPV6_WEB',
 		'USER': 'wsn',
 		'PASSWORD':'wsn3037',
 		'HOST': 'localhost',

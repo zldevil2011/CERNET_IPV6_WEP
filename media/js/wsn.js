@@ -173,7 +173,7 @@ var RPICTip = 0;
 $(function(){
     try{
         var real_image_update = setInterval('realSatelliteCloudImageUpdate()', 1000);
-        var RPIC = setInterval("updateRPTC('/RDCP/medium/SEVP_AOC_RDCP_SLDAS_EBREF_ACHN_L88_PI_2016', '0000001.PNG')");
+        var RPIC = setInterval("updateRPTC('/RDCP/medium/SEVP_AOC_RDCP_SLDAS_EBREF_ACHN_L88_PI_2018', '0000001.PNG')");
         clearInterval(RPIC);
         $(".satellite-cloud-image").on("click", function(){
             clearInterval(RPIC);
@@ -183,27 +183,27 @@ $(function(){
             RPICTip = 0;
             clearInterval(real_image_update);
             clearInterval(RPIC);
-            RPIC = setInterval("updateRPTC('/RDCP/medium/SEVP_AOC_RDCP_SLDAS_EBREF_ACHN_L88_PI_2016', '3000001.PNG')", 1000);
+            RPIC = setInterval("updateRPTC('/RDCP/medium/SEVP_AOC_RDCP_SLDAS_EBREF_ACHN_L88_PI_2018', '3000001.PNG')", 1000);
             console.log("clear The Time");
         });
         $(".precipitation").on("click", function(){
             RPICTip = 0;
             clearInterval(real_image_update);
             clearInterval(RPIC);
-            RPIC = setInterval("updateRPTC('/STFC/medium/SEVP_NMC_STFC_SFER_ER1_ACHN_L88_PB_2016', '0000000.jpg')", 1000);
+            RPIC = setInterval("updateRPTC('/STFC/medium/SEVP_NMC_STFC_SFER_ER1_ACHN_L88_PB_2018', '0000000.jpg')", 1000);
         });
         $(".temperature").on("click", function(){
             RPICTip = 0;
             clearInterval(real_image_update);
             clearInterval(RPIC);
-            RPIC = setInterval("updateRPTC('/STFC/medium/SEVP_NMC_STFC_SFER_ET0_ACHN_L88_PB_2016', '0000000.jpg')", 1000);
+            RPIC = setInterval("updateRPTC('/STFC/medium/SEVP_NMC_STFC_SFER_ET0_ACHN_L88_PB_2018', '0000000.jpg')", 1000);
         });
         $(".cloudy").on("click", function(){
-            //var nextURL = "http://image.nmc.cn/product/2016/05/24/STFC/medium/SEVP_NMC_STFC_SFER_EDA_ACHN_L88_PB_20160524010000000.jpg";
+            //var nextURL = "http://image.nmc.cn/product/2018/05/24/STFC/medium/SEVP_NMC_STFC_SFER_EDA_ACHN_L88_PB_20180524010000000.jpg";
             RPICTip = 0;
             clearInterval(real_image_update);
             clearInterval(RPIC);
-            RPIC = setInterval("updateRPTC('/STFC/medium/SEVP_NMC_STFC_SFER_EDA_ACHN_L88_PB_2016', '0000000.jpg')", 1000);
+            RPIC = setInterval("updateRPTC('/STFC/medium/SEVP_NMC_STFC_SFER_EDA_ACHN_L88_PB_2018', '0000000.jpg')", 1000);
         });
         $(".soil-humidity").on("click", function(){
             var today = new Date();
@@ -216,7 +216,7 @@ $(function(){
                 day = "0" + String(day);
             }
             var monthDay = String(month) + String(day);
-            var nextURL = "http://image.nmc.cn/product/2016/" + month + "/" + day + "/AMSM/medium/SEVP_NMC_AMSM_CAGMSS_ESRH_ACHN_L10CM_PS_2016" + monthDay + "000000000.jpg";
+            var nextURL = "http://image.nmc.cn/product/2018/" + month + "/" + day + "/AMSM/medium/SEVP_NMC_AMSM_CAGMSS_ESRH_ACHN_L10CM_PS_2018" + monthDay + "000000000.jpg";
             clearInterval(real_image_update);
             clearInterval(RPIC);
             $("#real-image").attr("src", nextURL);
@@ -256,7 +256,7 @@ function realSatelliteCloudImageUpdate(){
 	}
 	var monthDay = String(month) + String(day);
 
-    var nextURL = "http://image.nmc.cn/product/2016/"+month + "/" + day + "/WXCL/medium/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_2016" + monthDay + nextNum + "00000.JPG";
+    var nextURL = "http://image.nmc.cn/product/2018/"+month + "/" + day + "/WXCL/medium/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_2018" + monthDay + nextNum + "00000.JPG";
     $("#real-image").attr("src", nextURL);
 }
 function updateRPTC(type, lastP){
@@ -280,7 +280,7 @@ function updateRPTC(type, lastP){
 		day = "0" + String(day);
 	}
     var monthDay = String(month) + String(day);
-    var nextURL = "http://image.nmc.cn/product/2016/" + month + "/" + day + type + monthDay + timeParameter + lastP;
+    var nextURL = "http://image.nmc.cn/product/2018/" + month + "/" + day + type + monthDay + timeParameter + lastP;
     $("#real-image").attr("src", nextURL);
 }
 
